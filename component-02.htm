@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{field01}}
+            <component-01></component-01>
+        </div>
+    </body>
+    <script>
+    Vue.component('component-01',{
+        template:'<p>from component</p>'
+    })
+    new Vue({
+        el:'#app',
+        data:function(){
+            return{
+                field01:'some data here from data function'
+            }
+        }
+    })
+    </script>
+</html>

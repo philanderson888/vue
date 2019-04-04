@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <hr />
+            App
+            <component01></component01>
+        </div>
+        <div id="app2">
+            <hr />
+            App2
+            <component01></component01>
+        </div>
+    </body>
+    <script>
+    // create component as variable
+    var component01 = {
+        template:'<p>{{field01}}</p>',
+        data:function(){
+            return {
+                field01:'some data'
+            }
+        }
+    }
+
+    new Vue({
+        el:'#app',
+        components:{component01}
+    })
+
+    new Vue({
+        el:'#app2',
+        components:{
+            'component01': component01
+        }
+    })
+    </script>
+</html>

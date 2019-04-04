@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{globalData}}
+            <my-component-01></my-component-01>
+            <my-component-01></my-component-01>
+        </div>
+        <div id="app2">
+            <my-component-01></my-component-01>
+        </div>
+    </body>
+    <script>
+    Vue.component('my-component-01',{
+        template:'<p><br />hello<br />{{field01}}<br />{{field02}}<button @click="changeMe">ChangeMe</button></p>',
+        data:function(){
+            return {
+                field02: 'some more data here',
+                field01: 'some data here'
+            }
+        },
+        methods:{
+            changeMe:function(){
+                this.field01='Data has now been changed'
+            }
+        }
+    })
+    new Vue({
+        el:'#app',
+        data:function(){
+            return {
+                globalData:'this is common to all instances'
+            }
+        }
+    })
+
+    new Vue({
+        el:'#app2'
+    })
+    </script>
+</html>
