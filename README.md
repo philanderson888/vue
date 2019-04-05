@@ -179,6 +179,85 @@ dinosaurs:[{name:"raptor"},{name:"triceratops"}]
 </ul>
 ```
 
+See v-for-01.html
+
+### v-on:click
+
+We can bind a button click to a method
+
+```html
+<button v-on:click="doThis">Click Here</button>
+```
+
+### v-on:keypress.enter="methodName"
+
+We can call a method with the enter key as well as clicking on a button
+
+```html
+<form v-on:keypress.enter="methodName">
+```
+
+### Dynamically adding items to a list
+
+```html
+<button v-on:click="addItemToList">Add Item To List</button>
+```
+
+```html
+<form v-on:keypress.enter="addItem">
+    <input id="itemForm" />
+    <button v-on:click="addItem">Add Dinosaur</button>
+</form>
+```
+
+```javascript
+addItem(){
+  event.preventDefault()
+  var input = document.getElementById('itemForm')
+  if(input.value!==''){
+    let dataItem = {
+        value:input.value
+    }
+    this.dinosaurs.push({
+        name:dataItem.value
+    })
+    //input.value=''
+  }
+}
+```
+
+### v-for with index
+
+We can have two ways to call v-for
+
+1) v-for="item in items"
+
+2) v-for="(item,index) in items"
+
+we can now pass the index through to use it
+
+
+
+### Adding a delete button
+
+Let's add a delete button by adding the index to the v-for
+
+```html
+<li v-for="(dinosaur,index in dinosaurs">
+    <button v-on:click="deleteItem(index)">X</button>{{dinosaur.name}}
+</li>
+```
+
+```javascript
+deleteItem(index){
+this.dinosaurs.splice(index,1)
+}
+```
+
+
+
+
+
 ## Vue CLI 3
 
 `vue-cli` startup preferences can be saved for future use, to easily build custom projects from a set template over and over again.  The file that is used here is in ~ /.vuerc
