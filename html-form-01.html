@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>HTML Form</title>
+    <style>
+    #styleMe{
+        width:10vw;
+    }
+    .large{
+        width:20vw;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <button id="styleMe" v-bind:class="{large:isLarge}">Style Me</button><br /><br />
+        <input v-model="fontColor" /><label> Font Color</label><br />
+        <input v-model="backgroundColor" /> Background Color<br />
+        <input type="checkbox" v-model="isLarge" /> Large <br />
+        <input type="checkbox" v-model="isRounded" /> Rounded <br />
+        <input type="checkbox" v-model="isDisabled" /> Disabled <br />
+        <input type="range" v-model="range" min="0" max="100" value="0"/><br />
+    </div>
+<script>
+var app = new Vue({
+    el:"#app",
+    data:{
+        title:"Binding to HTML form data",
+        fontColor:'#cccccc',
+        backgroundColor:'#cccccc',
+        isLarge:false,
+        isDisabled:false,
+        isRounded:false,
+    }
+})
+</script>
+</body>
+</html>

@@ -256,6 +256,341 @@ this.dinosaurs.splice(index,1)
 
 
 
+### v-model : binding data fields
+
+We can bind data fields using v-model
+
+For example in our input form we can use
+
+```html
+<form v-on:keypress.enter="addItem">
+    Name:<input v-model="dinosaurName" id="dinosaurName" />
+    Weight:<input v-model="dinosaurWeight" type="number" id="dinosaurWeight"/> kg
+    <button v-on:click="addItem">Add Dinosaur</button>
+</form>
+```
+
+with each dinosaur displaying as a list item
+
+```html
+<ul>
+    <li v-for="(dinosaur,index in dinosaurs">
+        <button v-on:click="deleteItem(index)">X</button>
+        <h4>{{dinosaur.name}}</h4>
+        <p>The {{dinosaur.name}} weighs {{dinosaur.weight}} kg</p>
+        <a href="">https://en.wikidpedia.org/wiki/{{dinosaur.name}}</a>
+    </li>
+</ul>
+```
+
+where our Vue data item can now hold
+
+```javascript
+dinosaurs:[{name:"raptor",weight:20},{name:"triceratops",weight:200}],
+dinosaurName:'',
+dinosaurWeight:'',
+```
+
+so we can now add an item using
+
+```javascript
+addItem(){
+  event.preventDefault()
+  let dinosaurName = document.getElementById('dinosaurName').value
+  let dinosaurWeight = document.getElementById('dinosaurWeight').value
+  if(dinosaurName !== ''){
+    let newDinosaur = {
+        name:dinosaurName,
+        weight:dinosaurWeight
+    }
+    this.dinosaurs.push(newDinosaur)
+    this.dinosaurName=''
+    this.dinosaurWeight=''
+  }
+}
+```
+
+
+### Adding filters eg <h1>{{ field1 : filterByThis }}
+
+We can filter our lists and either display, hide or change the content.  
+
+For example we can ensure the first letter is capitalised
+
+```javascript
+filters:{
+  capitalize(value){
+    if(!value)return
+    value=value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+  }
+}
+```
+ 
+We can now apply the filter with 
+
+```html
+<li v-for="(dinosaur,index in dinosaurs">
+    <button v-on:click="deleteItem(index)">X</button>
+    <h4>{{dinosaur.name | capitalize}}</h4>
+    <p>The {{dinosaur.name}} weighs {{dinosaur.weight}} kg</p>
+    <a href="">https://en.wikidpedia.org/wiki/{{dinosaur.name}}</a>
+</li>
+```
+
+Which will now capitalize the first letter of every heading
+
+
+### Checking for null input value in a form
+
+Just check for 
+
+```javascript
+if(!value){ 
+    // value is blank
+}
+````
+
+### filter | undercase
+
+To create a filter for lower-case only we can do
+
+```javascript
+filter:{
+    undercase(value){
+        if(!value) return ''
+        value = value.toString()
+        return value.toLowerCase()
+    }
+}
+```
+
+so we can ensure the url is lower case
+
+```html
+<a href="">https://en.wikidpedia.org/wiki/{{dinosaur.name|undercase}}</a>
+```
+
+
+
+### piping filters
+
+Filters can be combined, or piped, so the output of one is fed into the input of another
+
+For example we can change the URL code to read, when we create a new filter
+
+```javascript
+filters:{
+    url(value){
+        if(!value) return ''
+        value=value.toString()
+        return "https://en.wikidpedia.org/wiki/" + value
+    },
+}
+````
+
+```html
+<a href="">{{ dinosaur.name | undercase | url }}</a>
+```
+
+So now the title appears in Uppercase for first letter, and the URL appears in all lower case regardless of the input.
+
+## Computed Properties
+
+These notes are taken from VueJS on Egghead Video 4 
+
+We can compute properties from other properties
+
+Let's create computed-properties-01
+
+In our Vue instance create, alongside data and methods and filters, one called 'computed'
+
+```javascript
+data:{},
+methods:{},
+filters:{},
+computed:{
+    totalDinosaurs(){
+
+    }
+}
+```
+
+We can add in detail such as : 
+
+```javascript
+dinosaurs: [
+    { name: "Raptor", weight: 20, quantity:1 },
+    { name: "triceratops", weight: 200, quantity:2 }
+],
+```
+
+So when we push a new dinosaur we can add the quantity
+
+```javascript
+if (dinosaurName !== "") {
+  let newDinosaur = {
+    name: dinosaurName,
+    weight: dinosaurWeight,
+    quantity:1,
+  };
+  this.dinosaurs.push(newDinosaur);
+```
+
+So we can add computed properties
+
+```javascript
+addQuantity(index){
+this.dinosaurs[index].quantity++
+},
+removeQuantity(index){
+this.dinosaurs[index].quantity--
+},
+```
+
+And now build this into our HTML
+
+```html
+<ul>
+<li v-for="(dinosaur,index in dinosaurs">
+  <button v-on:click="deleteItem(index)">X</button>
+  <h4>
+      <button v-on:click="removeQuantity(index)">-</button>
+      {{ dinosaur.quantity }}
+      <button v-on:click="addQuantity(index)">+</button>
+    {{ dinosaur.name | capitalize }}
+
+  </h4>
+  <p>The {{ dinosaur.name }} weighs {{ dinosaur.weight }} kg</p>
+  <a href="">{{ dinosaur.name | undercase | url }}</a>
+</li>
+</ul>
+```
+
+
+### Watching
+
+We can add, alongside data: and methods: and other blocks, a new block called `watch`.
+
+This can be aware of changing values on our page.
+
+We must name our watched property to be the name of another data property or computed property etc which already exists.
+
+```javascript
+watch:{
+  totalDinosaurs(){
+    if(this.totalDinosaurs>=10){
+      document.getElementById('populationWarning').style.visibility="visible"
+    }
+    else{
+      document.getElementById('populationWarning').style.visibility="hidden"
+    }
+  }
+},
+computed:{
+  totalDinosaurs(){
+    return this.dinosaurs.length
+  }
+},
+```
+
+which can make our HTML appear or disappear
+
+```html
+<h3 id="populationWarning">Population Limit Exceeded!!!</h3>
+```
+
+
+### Binding to HTML Input fields
+
+We can bind HTML form input data
+
+Let's create a simple set of elements with styling data which can be input.
+
+```html
+<h1>{{title}}</h1>
+<button id="styleMe" v-bind:class="{large:isLarge}">Style Me</button><br /><br />
+<input v-model="fontColor" /><label> Font Color</label><br />
+<input v-model="backgroundColor" /> Background Color<br />
+<input type="checkbox" v-model="isLarge" /> Large <br />
+<input type="checkbox" v-model="isRounded" /> Rounded <br />
+<input type="checkbox" v-model="isDisabled" /> Disabled <br />
+<input type="range" v-model="range" min="0" max="100" value="0"/><br />
+```
+
+We have used v-model to bind the values to items found in the data: object in our Vue instance
+
+```javascript
+data:{
+    title:"Binding to HTML form data",
+    fontColor:'#cccccc',
+    backgroundColor:'#cccccc',
+    isLarge:false,
+    isDisabled:false,
+    isRounded:false,
+}
+```
+
+We have bound the class 'Large' to whether or not the 'isLarge' tick box is ticked or not
+
+```css
+<style>
+#styleMe{
+    width:10vw;
+}
+.large{
+    width:20vw;
+}
+</style>
+```
+
+So the default width is 10% but when 'large' is ticked the width becomes 20% of the screen width.
+
+See html-form-01.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
 
 
 ## Vue CLI 3

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HelloWorld06</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <style>
+      ul {
+        background-color: #eee;
+      }
+      li {
+        list-style-type: none;
+        width: 30vw;
+        height: 20vh;
+        border: 2px solid black;
+        background-color: #ccc;
+        float: left;
+        margin: 3vmin;
+        padding: 3vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <form v-on:keypress.enter="addItem">
+        Name:<input v-model="dinosaurName" id="dinosaurName" /> 
+        Weight:<input v-model="dinosaurWeight"  type="number" id="dinosaurWeight"/> kg
+        <button v-on:click="addItem">Add Dinosaur</button>
+      </form>
+      <div v-html="content"></div>
+      <ul>
+        <li v-for="(dinosaur,index in dinosaurs">
+          <button v-on:click="deleteItem(index)">X</button>
+          <h4>{{ dinosaur.name | capitalize }}</h4>
+          <p>The {{ dinosaur.name }} weighs {{ dinosaur.weight }} kg</p>
+          <a href="">{{ dinosaur.name | undercase | url }}</a>
+        </li>
+      </ul>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          title: "Dinosaurs",
+          content:
+            "<strong>Dinosaurs</strong> appeared during the Triassic period",
+          dinosaurs: [
+            { name: "Raptor", weight: 20 },
+            { name: "triceratops", weight: 200 }
+          ],
+          dinosaurName: "",
+          dinosaurWeight: ""
+        },
+        methods: {
+          addItem() {
+            event.preventDefault();
+            let dinosaurName = document.getElementById("dinosaurName").value;
+            let dinosaurWeight = document.getElementById("dinosaurWeight")
+              .value;
+            if (dinosaurName !== "") {
+              let newDinosaur = {
+                name: dinosaurName,
+                weight: dinosaurWeight
+              };
+              this.dinosaurs.push(newDinosaur);
+              this.dinosaurName = "";
+              this.dinosaurWeight = "";
+            }
+          },
+          deleteItem(index) {
+            this.dinosaurs.splice(index, 1);
+          }
+        },
+        filters: {
+          capitalize(value) {
+            if (!value) return;
+            value = value.toString();
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
+          undercase(value) {
+            if (!value) return "";
+            value = value.toString();
+            return value.toLowerCase();
+          },
+          url(value) {
+            if (!value) return "";
+            value = value.toString();
+            return "https://en.wikidpedia.org/wiki/" + value;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
