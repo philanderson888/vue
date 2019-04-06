@@ -546,7 +546,7 @@ We have bound the class 'Large' to whether or not the 'isLarge' tick box is tick
 
 So the default width is 10% but when 'large' is ticked the width becomes 20% of the screen width.
 
-See html-form-01.html
+See [html-form-01.html](https://github.com/philanderson888/vue/blob/master/html-form-01.html)
 
 
 
