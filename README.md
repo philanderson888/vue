@@ -755,6 +755,39 @@ see [checked-01.html](checked-01.html)
 
 ### Vue With Radio Buttons
 
+We can bind the value of a radio button (which gets submitted in the form) with
+
+```html
+<input type="radio" v-bind:value="dinosaur.name" />
+```
+
+and also if we want to know which radio button has been clicked we can use v-model="selectedItem"
+
+See full example at [radio-buttons-01.html](radio-buttons-01.html)
+
+```html
+<h3>Basic v-for list of dinosaurs</h3>
+<ul>
+    <li v-for="dinosaur in dinosaurs">{{dinosaur.name}}</li>
+</ul>
+<h3>Now creating the same list as radio buttons</h3>
+<ul>
+    <li v-for="dinosaur in dinosaurs">
+        <input type="radio" v-bind:value="dinosaur.name" v-model="selectedDinosaur"/>{{dinosaur.name}}
+    </li>
+</ul>
+<h5>Your selected dinosaur is {{selectedDinosaur}}</h5>
+</div>
+<script>
+var app = new Vue({
+el:'#app',
+data:{
+    title:"Working With Checkboxes In Vue",
+    dinosaurs:[{name:'Velociraptor'},{name:'tyrannosaurus'}],
+    selectedDinosaur:'',
+}
+})   
+```
 
 <pre>
 
