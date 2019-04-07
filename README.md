@@ -191,7 +191,8 @@ dinosaurs:[{name:"raptor"},{name:"triceratops"}]
 </ul>
 ```
 
-See v-for-01.html
+See [v-for-01.html](https://github.com/philanderson888/vue/blob/master/v-for-01.html) for a working example
+
 
 ### v-on:click
 
@@ -669,8 +670,7 @@ We can use v-else to instruct what to do if the previous v-if is false
 <h3 v-else>Please add a new dinosaur</h3>
 ```
 
-See [v-if-else-01.html] for a working example
-
+See [v-if-else-01.html](https://github.com/philanderson888/vue/blob/master/v-if-else-01.html) for a working example
 
 
 
