@@ -944,8 +944,51 @@ var app = new Vue({
 
 See [component-01.html](component-01.html) as a worked example
 
+And [component-02.html](component-02.html) also
 
+### Reusing components
 
+Components can be used multiple times
+
+```html
+<div id="app">
+    {{globalData}}
+    <my-component-01></my-component-01>
+    <my-component-01></my-component-01>
+</div>
+```
+
+### Component Global Data
+
+We can have data common across all components
+
+```html
+<div id="app">
+  {{globalData}}
+  <component01 />
+  <component01 />
+</div>
+```
+
+```javascript
+new Vue({
+  el:'#app',
+  data(){
+    return {
+      globalData:"some global data"
+    }
+  }
+})
+Vue.component(
+  'componenet01',
+  template:'<p>{{localData}}</p>',
+  data(){
+    return {
+      localData:'some local data'
+    }
+  }
+)
+```
 
 
 

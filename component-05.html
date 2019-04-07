@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>Vue Components</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <h3>This is raw HTML with Vue</h3>
+        <ul>
+            <li v-for="dinosaur in dinosaurs">
+                <button v-on:click="dinosaur.quantity++">{{dinosaur.quantity}}</button>{{dinosaur.name}}
+            </li>
+        </ul>
+        <h3>This is a Vue component</h3>
+        <ul>
+            <li v-for="dinosaur in dinosaurs">
+                <component01  v-bind:name="dinosaur.name"  v-bind:quantity="dinosaur.quantity" />
+            </li>
+        </ul>
+    </div>
+    <script type="text/x-template" id="component01">
+        <div>
+            <button v-on:click="quantity++">{{quantity}}</button>{{name}}
+        </div>
+    </script>
+    <script>
+    new Vue({
+        el:'#app',
+        data:{
+            title: 'Using Components In Vue : Using the x-template syntax',
+            dinosaurs:[{name:'Tyrannosaurus',quantity:2},{name:'Velociraptor',quantity:3}],
+        },
+        components:{
+            'component01':{
+                template:"#component01",
+                props:["name","quantity"],
+            }
+        },
+    })
+    </script>
+</body>
+</html>
