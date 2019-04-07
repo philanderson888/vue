@@ -6,7 +6,7 @@ Here is a learning repository for learning basic VueJS
 
 [Getting Started : Hello World VueJS](#hello-world)
 
-[Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model, v-show)](#basic-vue-syntax)
+[Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model, v-show,v-on:keyup,v-on:click)](#basic-vue-syntax)
 
 [Vue Classes](#vue-classes)
 
@@ -157,7 +157,7 @@ var card = new Vue({
 
 [v-if and v-else](#v-if-and-v-else)
 
-[v-on:keyup](#v-on-keyup)
+[v-on:keyup](#v-onkeyup)
 
 ### v-html
 
@@ -211,8 +211,9 @@ v-on:keyup.enter="methodName"
 We can call a method with the enter key as well as clicking on a button
 
 ```html
-<form v-on:keypress.enter="methodName">
+<form v-on:keyup.enter="methodName">
 ```
+
 
 
 ### Dynamically adding items to a list
@@ -702,6 +703,7 @@ We could show/hide buttons for example
 ```
 
 See [v-show-01.html](https://github.com/philanderson888/vue/blob/master/v-show-01.html) for a working example
+
 
 
 
