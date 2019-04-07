@@ -1,10 +1,12 @@
 # A place for learning VueJS
 
-Here are a random assortment of projects built in VueJS, in no particular structured order.
+Here is a learning repository for learning basic VueJS
 
 ## Contents
 
-[Vue Terms](#vue-terms)
+[Getting Started : Hello World VueJS](#hello-world)
+
+[Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model)]()
 
 [Vue Classes](#vue-classes)
 
@@ -144,6 +146,16 @@ var card = new Vue({
     }
 })
 ```
+
+## Basic Vue Syntax
+
+[v-html](#v-html)
+
+[v-on:click](#v-on-click)
+
+[v-model : Binding data fields](#v-model-binding-data-fields)
+
+[v-if and v-else](#v-if-and-v-else)
 
 ### v-html
 
@@ -641,6 +653,23 @@ This finishes Egghead Vue video 6
 
 We can use if..else statements to render content
 
+### v-if
+
+We can for example conditionally display a list
+
+```html
+<ul v-if="dinosaurs.length>0">
+```
+
+### v-else
+
+We can use v-else to instruct what to do if the previous v-if is false
+
+```html
+<h3 v-else>Please add a new dinosaur</h3>
+```
+
+See [v-if-else-01.html] for a working example
 
 
 
