@@ -467,6 +467,8 @@ And now build this into our HTML
 </ul>
 ```
 
+See [computed-properties-01.html](https://github.com/philanderson888/vue/blob/master/computed-properties-01.html) for a working example
+
 
 ### Watching
 
@@ -509,7 +511,7 @@ Let's create a simple set of elements with styling data which can be input.
 
 ```html
 <h1>{{title}}</h1>
-<button id="styleMe" v-bind:class="{large:isLarge}">Style Me</button><br /><br />
+<button class="styleMe" v-bind:class="{large:isLarge}">Style Me</button><br /><br />
 <input v-model="fontColor" /><label> Font Color</label><br />
 <input v-model="backgroundColor" /> Background Color<br />
 <input type="checkbox" v-model="isLarge" /> Large <br />
@@ -535,7 +537,7 @@ We have bound the class 'Large' to whether or not the 'isLarge' tick box is tick
 
 ```css
 <style>
-#styleMe{
+.styleMe{
     width:10vw;
 }
 .large{
@@ -548,11 +550,96 @@ So the default width is 10% but when 'large' is ticked the width becomes 20% of 
 
 See [html-form-01.html](https://github.com/philanderson888/vue/blob/master/html-form-01.html)
 
+### Binding an array of classes
+
+We can bind multiple classes by using an array
+
+```html
+<button  class="styleMe" v-bind:class="[{large:isLarge},{rounded:isRounded}]" 
+```
 
 
 
 
+### Enable or disable an item
 
+We can `v-bind:disabled` to an item
+
+```html
+<button 
+    class="styleMe" 
+    v-bind:disabled="isDisabled">Style Me
+</button><br /><br />
+<input type="checkbox" v-model="isDisabled" /> Disabled <br />
+```
+
+
+### Setting inline styles
+
+To set inline styles we can use computed properties
+
+```html
+<button v-bind:style="styles">
+```
+
+```javascript
+computed:{
+  styles(){
+    return{
+      'margin-left':this.buttonMarginLeft + '%',
+      background:this.backgroundColor,
+      color:this.fontColor,
+    }
+  }
+}
+```
+
+So for example this would work
+
+```html
+<button 
+    class="styleMe" 
+    v-bind:class="[{large:isLarge},{rounded:isRounded}]" 
+    v-bind:style="styles"
+    v-bind:disabled="isDisabled">Style Me
+</button><br /><br />
+<input v-model="fontColor" /><label> Font Color</label><br />
+<input v-model="backgroundColor" /> Background Color<br />
+<input type="checkbox" v-model="isLarge" /> Large <br />
+<input type="checkbox" v-model="isRounded" /> Rounded <br />
+<input type="checkbox" v-model="isDisabled" /> Disabled <br />
+<input type="range" v-model="buttonMarginLeft" min="0" max="100" /><br />
+```
+
+
+```javascript
+data:{
+    title:"Binding to HTML form data",
+    fontColor:'#cccccc',
+    backgroundColor:'#cccccc',
+    isLarge:false,
+    isDisabled:false,
+    isRounded:false,
+    buttonMarginLeft:0,
+},
+computed:{
+    styles(){
+        return {
+            'margin-left':this.buttonMarginLeft + '%',
+             background:this.backgroundColor,
+             color:this.fontColor,
+        }
+    }
+},
+```
+
+Again see [html-form-01.html](https://github.com/philanderson888/vue/blob/master/html-form-01.html) for a working example of this
+
+This finishes Egghead Vue video 6
+
+### v-if and v-else
+
+We can use if..else statements to render content
 
 
 

@@ -8,24 +8,36 @@
     <script src="assets/js/vue.js"></script>
     <title>HTML Form</title>
     <style>
-    #styleMe{
+    .styleMe{
         width:10vw;
     }
     .large{
-        width:20vw;
+        width:30vw;
+        background-color: red;
+    }
+    .rounded{
+        border-radius: 5px;
+    }
+    .disabled{
+        
     }
     </style>
 </head>
 <body>
     <div id="app">
         <h1>{{title}}</h1>
-        <button id="styleMe" v-bind:class="{large:isLarge}">Style Me</button><br /><br />
+        <button 
+            class="styleMe" 
+            v-bind:class="[{large:isLarge},{rounded:isRounded}]" 
+            v-bind:style="styles"
+            v-bind:disabled="isDisabled">Style Me
+        </button><br /><br />
         <input v-model="fontColor" /><label> Font Color</label><br />
         <input v-model="backgroundColor" /> Background Color<br />
         <input type="checkbox" v-model="isLarge" /> Large <br />
         <input type="checkbox" v-model="isRounded" /> Rounded <br />
         <input type="checkbox" v-model="isDisabled" /> Disabled <br />
-        <input type="range" v-model="range" min="0" max="100" value="0"/><br />
+        <input type="range" v-model="buttonMarginLeft" min="0" max="100" /><br />
     </div>
 <script>
 var app = new Vue({
@@ -37,7 +49,17 @@ var app = new Vue({
         isLarge:false,
         isDisabled:false,
         isRounded:false,
-    }
+        buttonMarginLeft:0,
+    },
+    computed:{
+        styles(){
+            return {
+                'margin-left':this.buttonMarginLeft + '%',
+                 background:this.backgroundColor,
+                 color:this.fontColor,
+            }
+        }
+    },
 })
 </script>
 </body>
