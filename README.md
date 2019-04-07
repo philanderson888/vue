@@ -6,7 +6,7 @@ Here is a learning repository for learning basic VueJS
 
 [Getting Started : Hello World VueJS](#hello-world)
 
-[Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model)](#basic-vue-syntax)
+[Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model, v-show)](#basic-vue-syntax)
 
 [Vue Classes](#vue-classes)
 
@@ -672,6 +672,31 @@ We can use v-else to instruct what to do if the previous v-if is false
 
 See [v-if-else-01.html](https://github.com/philanderson888/vue/blob/master/v-if-else-01.html) for a working example
 
+
+### v-show
+
+V-show can display items on a page similar to `v-if` and `v-else`
+
+```html
+<div v-show="quantity<5">
+```
+
+We could show/hide buttons for example
+
+```html
+<ul v-if="dinosaurs.length>0">
+    <h2>List of {{dinosaurs.length}} dinosaurs</h2>
+    <li v-for="(dinosaur,index) in dinosaurs">
+        <button v-show="dinosaur.quantity<=5" v-on:click="increaseQuantity(index)">+</button>
+            {{dinosaur.quantity}}  
+        <button v-show="dinosaur.quantity>1" v-on:click="decreaseQuantity(index)">-</button>
+            {{dinosaur.name}}
+        <button v-on:click="removeDinosaur(index)">X</button>
+    </li>
+</ul>
+```
+
+See [v-if-else-01.html](https://github.com/philanderson888/vue/blob/master/v-if-else-01.html) for a working example
 
 
 
