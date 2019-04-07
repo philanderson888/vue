@@ -4,6 +4,8 @@ Here is a learning repository for learning basic VueJS
 
 ## Contents
 
+[Introduction To VueJS](#introduction-to-vuejs)
+
 [Getting Started : Hello World VueJS](#hello-world)
 
 [Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model, v-show,v-on:keyup,v-on:click)](#basic-vue-syntax)
@@ -19,6 +21,8 @@ Here is a learning repository for learning basic VueJS
 [Vue Tutorial Walkthroughs](#vue-tutorial-walkthroughs)
 
 [Vue In Visual Studio](vue-in-visual-studio)
+
+## Introduction To VueJS
 
 ### Who to follow
 
