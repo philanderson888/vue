@@ -8,6 +8,8 @@ Here is a learning repository for learning basic VueJS
 
 [Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model, v-show,v-on:keyup,v-on:click)](#basic-vue-syntax)
 
+[Working With Forms](#working-with-forms)
+
 [Vue Classes](#vue-classes)
 
 [Vue Components](#vue-components)
@@ -705,16 +707,30 @@ We could show/hide buttons for example
 See [v-show-01.html](https://github.com/philanderson888/vue/blob/master/v-show-01.html) for a working example
 
 
+## Working With Forms
+
+### v-on:submit
+
+We can call a method on submitting a form
+
+```html
+<form v-on:submit="validateFields">
+```
+
+We can call event.PreventDefault() method using the following syntax
+
+```html
+<form v-on:submit.prevent="validateFields"
+```
+
+
+
 
 
 
 
 
 <pre>
-
-
-
-
 
 
 
