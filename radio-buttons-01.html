@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>Radio Buttons</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{title}}</h2>
+        <h3>Basic v-for list of dinosaurs</h3>
+        <ul>
+            <li v-for="dinosaur in dinosaurs">{{dinosaur.name}}</li>
+        </ul>
+        <h3>Now creating the same list as radio buttons</h3>
+        <ul>
+            <li v-for="dinosaur in dinosaurs">
+                <input type="radio" v-bind:value="dinosaur.name" v-model="selectedDinosaur"/>{{dinosaur.name}}
+            </li>
+        </ul>
+        <h5>Your selected dinosaur is {{selectedDinosaur}}</h5>
+    </div>
+    <script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            title:"Working With Checkboxes In Vue",
+            dinosaurs:[{name:'Velociraptor'},{name:'tyrannosaurus'}],
+            selectedDinosaur:'',
+        }
+    })    
+    </script>
+</body>
+</html>

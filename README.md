@@ -711,7 +711,7 @@ See [v-show-01.html](v-show-01.html) for a working example
 
 [v-on:submit](#v-onsubmit)
 
-[Vue With Checkboxes](#working-with-checkboxes)
+[Vue With Checkboxes](#vue-with-checkboxes)
 
 [Vue With Radio Buttons](#vue-with-radio-buttons)
 
