@@ -724,10 +724,30 @@ We can call event.PreventDefault() method using the following syntax
 ```
 
 
+### Vue With Checkboxes
 
+v-model:checked
 
+We can create a binding for an input checkbox
 
+```html
+<div id="app">
+    <input type="checkbox" id="checkbox" v-model="isChecked" />This checkbox is {{ isChecked ? 'checked' : 'unchecked' }}
+    <div v-show="isChecked">Checked</div>
+</div>
+<script>
+var app = new Vue({
+    el:'#app',
+    data:{
+        isChecked:false,
+    }
+})    
+</script>
+```
 
+see [checked-01.html]
+
+### Vue With Radio Buttons
 
 
 <pre>
