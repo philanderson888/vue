@@ -902,6 +902,61 @@ styles(){
 }
 ```
 
+## Vue Components
+
+Components are used to break bigger apps up. Can separate into .vue files if needed
+
+
+### Create a component
+
+Vue.component(
+  'my-component',
+  {template:'This is my component text'}
+)
+
+We can also declare it as a literal object
+
+```javascript
+var component01 = {
+    template:'<p>{{field01}}</p>',
+    data:function(){
+        return {
+            field01:'some data'
+        }
+    }
+}
+```
+
+### Using a component
+
+We can now declare a parent Vue element and use this component
+
+```vue
+<div id="app">
+  <my-component></my-component>
+</div>
+<script>
+var app = new Vue({
+  el:'#app'
+})
+</script>
+```
+
+See [component-01.html](component-01.html) as a worked example
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
