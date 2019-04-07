@@ -995,12 +995,9 @@ VUE_APP_TITLE: "App Title"
 
 ## Vue Tutorial Walkthroughs
 
-### [Vue Tutorial 1: Traversy Media : Vue in 60 minutes](#vue-tutorial-1)
+### [Vue Tutorial 1: Traversy Media : Vue in 60 minutes](#vue-tutorial-1-traversy-media--vue-in-60-minutes-1)
 
-### [Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes](#vue-tutorial-2)
-
-### [Vue Tutorial 3 : Udemy Course £24 by Maximilian Schwarzmüller : Vue JS 2 - The Complete Guide (incl. Vue Router & Vuex) at Udemy](https://www.udemy.com/vuejs-2-the-complete-guide/?siteID=my9IzLo0578-Srtneh5g9t8pk0vHSQvviQ&LSNPUBID=my9IzLo0578)
-
+### [Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes](#vue-tutorial-2--connecting-vue-to-firebase-database-in-54-minutes-1)
 
 ## Vue Tutorial 1: Traversy Media : Vue in 60 minutes
 
