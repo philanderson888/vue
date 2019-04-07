@@ -745,7 +745,7 @@ var app = new Vue({
 </script>
 ```
 
-see [checked-01.html]
+see [checked-01.html](checked-01.html)
 
 ### Vue With Radio Buttons
 
