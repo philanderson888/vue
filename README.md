@@ -157,6 +157,8 @@ var card = new Vue({
 
 [v-if and v-else](#v-if-and-v-else)
 
+[v-on:keyup](#v-on-keyup)
+
 ### v-html
 
 To make the `html` display properly we can change the syntax to 
@@ -202,13 +204,16 @@ We can bind a button click to a method
 <button v-on:click="doThis">Click Here</button>
 ```
 
-### v-on:keypress.enter="methodName"
+### v-on:keyup
+
+v-on:keyup.enter="methodName"
 
 We can call a method with the enter key as well as clicking on a button
 
 ```html
 <form v-on:keypress.enter="methodName">
 ```
+
 
 ### Dynamically adding items to a list
 
