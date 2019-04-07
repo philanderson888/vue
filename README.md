@@ -720,7 +720,7 @@ We can call a method on submitting a form
 We can call event.PreventDefault() method using the following syntax
 
 ```html
-<form v-on:submit.prevent="validateFields"
+<form v-on:submit.prevent="validateFields">
 ```
 
 
