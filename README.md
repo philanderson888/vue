@@ -95,6 +95,22 @@ We can access the Vue library either online via a CDN or offline
 <script src="assets/js/vue.js"></script>
 ```
 
+
+## Vue In Visual Studio
+
+https://docs.microsoft.com/en-us/visualstudio/javascript/quickstart-vuejs-with-nodejs?view=vs-2017
+
+Requirements
+
+1. Visual Studio with NodeJS binaries installed
+
+2. NodeJS installed
+
+New Project, Typescript, Basic VueJS Application
+
+
+
+
 ## Hello World
 
 We can create a `hello world` vue file inside a regular .html file
@@ -523,10 +539,11 @@ which can make our HTML appear or disappear
 <h3 id="populationWarning">Population Limit Exceeded!!!</h3>
 ```
 
+### Dynamically Changing CSS Classes with v-bind:class
 
-### Binding to HTML Input fields
+v-bind:class="{style:styleIsApplied}"
 
-We can bind HTML form input data
+We can bind HTML form input data and use it to set CSS class styles
 
 Let's create a simple set of elements with styling data which can be input.
 
@@ -595,7 +612,7 @@ We can `v-bind:disabled` to an item
 ```
 
 
-### Setting inline styles
+### Setting inline CSS Styles
 
 To set inline styles we can use computed properties
 
@@ -854,11 +871,36 @@ See [select-box-01.html](select-box-01.html) for a working example
 
 
 
+## Vue Classes
+
+With CSS we can apply or not apply CSS Styles using the following syntax
+
+```html
+<div v-bind:class="{ customStyle1:isStyle1Applied, customStyle2:isStyle2Applied}" 
+```
+
+where the custom styles are applied depending if the values are true or false
 
 
+## Vue Inline Styles
 
+We can also set inline styles with
 
+```html
+<div v-bind:style="computedStyle">
+```
 
+where computedStyle is a computed property 
+
+```javascript
+styles(){
+    return {
+        'margin-left':this.buttonMarginLeft + '%',
+         background:this.backgroundColor,
+         color:this.fontColor,
+    }
+}
+```
 
 
 
@@ -1034,22 +1076,6 @@ VUE_APP_TITLE: "App Title"
 7.  Cd vue-01
 8.  Npm install
 9.  Npm run dev
-
-## Applying CSS Classes to VUE
-
-<div v-bind:class="{active:isActive}"></div> <div v-bind:style="{color:activeColor}"></div> Vue file data{ isActive:true, activeColor:'red' }
-
-## Vue Components
-
-Components are used to break bigger apps up. Can separate into .vue files if needed
-
-1.  Create a component
-
-    Vue.component('my-component',{template:'This is my component text'})
-
-2.  <div id="app"><my-component></my-component></div>
-
-
 
 
 
@@ -2068,26 +2094,6 @@ Edit the number of articles returned to 5 in http.controllers.articlecontroller
 Change the order to orderBy('created_at','desc')
 
     
-
-## Vue In Visual Studio
-
-https://docs.microsoft.com/en-us/visualstudio/javascript/quickstart-vuejs-with-nodejs?view=vs-2017
-
-Requirements
-
-1. Visual Studio with NodeJS binaries installed
-
-2. NodeJS installed
-
-New Project, Typescript, Basic VueJS Application
-
-
-
-### Angular vs React vs Vue
-
-[https://medium.com/unicorn-supplies/angular-vs-react-vs-vue-a-2017-comparison-c5c52d620176](
-https://medium.com/unicorn-supplies/angular-vs-react-vs-vue-a-2017-comparison-c5c52d620176)
-
 
 
 
