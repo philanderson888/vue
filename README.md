@@ -195,7 +195,7 @@ dinosaurs:[{name:"raptor"},{name:"triceratops"}]
 </ul>
 ```
 
-See [v-for-01.html](apiKey=' + this.apikeyv-for-01.html) for a working example
+See [v-for-01.html](v-for-01.html) for a working example
 
 
 ### v-on:click
@@ -708,6 +708,12 @@ See [v-show-01.html](v-show-01.html) for a working example
 
 
 ## Working With Forms
+
+[v-on:submit](#v-onsubmit)
+
+[Vue With Checkboxes](#working-with-checkboxes)
+
+[Vue With Radio Buttons](#vue-with-radio-buttons)
 
 ### v-on:submit
 
