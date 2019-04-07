@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>v-if</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        Add a new dinosaur <input v-model="dinosaurName" />
+        <button v-on:click="addDinosaur">Submit</button>
+        <ul v-if="dinosaurs.length>0">
+            <h2>List of {{dinosaurs.length}} dinosaurs</h2>
+            <li v-for="(dinosaur,index) in dinosaurs">
+                <button v-show="dinosaur.quantity<=5" v-on:click="increaseQuantity(index)">+</button>
+                    {{dinosaur.quantity}}  
+                <button v-show="dinosaur.quantity>1" v-on:click="decreaseQuantity(index)">-</button>
+                    {{dinosaur.name}}
+                <button v-on:click="removeDinosaur(index)">X</button>
+            </li>
+        </ul>
+        <h3 v-else>Please add a new dinosaur</h3>
+    </div>
+    <script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            title:"v-if and v-else",
+            dinosaurs:[
+                {name:"Velociraptor",quantity:2},
+                {name:"Triceratops",quantity:3}
+            ],
+            dinosaurName:'',
+        },
+        methods:{
+            addDinosaur(){
+                let newDinosaur = {
+                    name:this.dinosaurName,
+                    quantity:1,
+                }
+                this.dinosaurs.push(newDinosaur)
+            },
+            increaseQuantity(index){
+                this.dinosaurs[index].quantity++
+            },
+            decreaseQuantity(index){
+                this.dinosaurs[index].quantity--
+            },
+            removeDinosaur(index){
+                this.dinosaurs.splice(index,1)
+            }
+        }
+    })
+    </script>
+</body>
+</html>

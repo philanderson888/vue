@@ -696,7 +696,7 @@ We could show/hide buttons for example
 </ul>
 ```
 
-See [v-if-else-01.html](https://github.com/philanderson888/vue/blob/master/v-if-else-01.html) for a working example
+See [v-show-01.html](https://github.com/philanderson888/vue/blob/master/v-show-01.html) for a working example
 
 
 
