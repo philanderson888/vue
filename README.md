@@ -6,7 +6,7 @@ Here is a learning repository for learning basic VueJS
 
 [Getting Started : Hello World VueJS](#hello-world)
 
-[Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model)]()
+[Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model)](#basic-vue-syntax)
 
 [Vue Classes](#vue-classes)
 
