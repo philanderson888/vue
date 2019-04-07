@@ -195,7 +195,7 @@ dinosaurs:[{name:"raptor"},{name:"triceratops"}]
 </ul>
 ```
 
-See [v-for-01.html](https://github.com/philanderson888/vue/blob/master/v-for-01.html) for a working example
+See [v-for-01.html](apiKey=' + this.apikeyv-for-01.html) for a working example
 
 
 ### v-on:click
@@ -488,7 +488,7 @@ And now build this into our HTML
 </ul>
 ```
 
-See [computed-properties-01.html](https://github.com/philanderson888/vue/blob/master/computed-properties-01.html) for a working example
+See [computed-properties-01.html](computed-properties-01.html) for a working example
 
 
 ### Watching
@@ -569,7 +569,7 @@ We have bound the class 'Large' to whether or not the 'isLarge' tick box is tick
 
 So the default width is 10% but when 'large' is ticked the width becomes 20% of the screen width.
 
-See [html-form-01.html](https://github.com/philanderson888/vue/blob/master/html-form-01.html)
+See [html-form-01.html](html-form-01.html)
 
 ### Binding an array of classes
 
@@ -654,7 +654,7 @@ computed:{
 },
 ```
 
-Again see [html-form-01.html](https://github.com/philanderson888/vue/blob/master/html-form-01.html) for a working example of this
+Again see [html-form-01.html](html-form-01.html) for a working example of this
 
 This finishes Egghead Vue video 6
 
@@ -678,7 +678,7 @@ We can use v-else to instruct what to do if the previous v-if is false
 <h3 v-else>Please add a new dinosaur</h3>
 ```
 
-See [v-if-else-01.html](https://github.com/philanderson888/vue/blob/master/v-if-else-01.html) for a working example
+See [v-if-else-01.html](v-if-else-01.html) for a working example
 
 
 ### v-show
@@ -704,7 +704,7 @@ We could show/hide buttons for example
 </ul>
 ```
 
-See [v-show-01.html](https://github.com/philanderson888/vue/blob/master/v-show-01.html) for a working example
+See [v-show-01.html](v-show-01.html) for a working example
 
 
 ## Working With Forms
