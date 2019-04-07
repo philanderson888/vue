@@ -715,6 +715,8 @@ See [v-show-01.html](v-show-01.html) for a working example
 
 [Vue With Radio Buttons](#vue-with-radio-buttons)
 
+[Vue With Drop-Down Boxes (HTML Select )](#vue-with-drop-down-boxes-html-select)
+
 ### v-on:submit
 
 We can call a method on submitting a form
@@ -788,6 +790,78 @@ data:{
 }
 })   
 ```
+
+
+
+### Vue With Drop-Down Boxes (HTML Select)
+
+We can also use multi-select checkboxes which are used on many standard forms
+
+The HTML element is called `select` and each item is an `option`
+
+Let's create a basic drop-down box
+
+```html
+<select>
+    <option v-for="dinosaur in dinosaurs" v-bind:value="dinosaur.name">{{dinosaur.name}}</option>
+</select>
+```
+
+In order to output which item has been selected we can use `v-model`
+
+```html
+<div id="app">
+    <select v-model="selectedDinosaur">
+        <option v-for="dinosaur in dinosaurs" v-bind:value="dinosaur.name">{{dinosaur.name}}</option>
+    </select>
+    <h4>Your selected dinosaur is {{selectedDinosaur}}</h4>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            dinosaurs:[{name:"velociraptor"},{name:"stegasaursus"},{name:"triceratops"}],
+            selectedDinosaur:'',
+        }
+    })
+</script>
+```
+
+We can add multi-select by creating an array of `selectedDinosaurs`
+
+```html
+<div id="app">
+    <h2>Selecting Multiple Dinosaurs</h2>
+    <select v-model="selectedDinosaurs" multiple>
+        <option v-for="dinosaur in dinosaurs" v-bind:value="dinosaur.name">{{dinosaur.name}}</option>
+    </select>
+    <h4>Your selected dinosaurs are {{selectedDinosaurs.toString()}}</h4>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            dinosaurs:[{name:"velociraptor"},{name:"stegasaursus"},{name:"triceratops"}],
+            selectedDinosaur:'',
+            selectedDinosaurs:[],
+        }
+    })
+</script>
+```
+
+
+See [select-box-01.html](select-box-01.html) for a working example
+
+
+
+
+
+
+
+
+
+
+
 
 <pre>
 

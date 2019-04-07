@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>Select Boxes</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Using HTML Single-Select and Multi-Select Boxes with Vue</h1>
+        <hr />
+        <h2>Selecting Just One Dinosaur</h2>
+        <select v-model="selectedDinosaur">
+            <option v-for="dinosaur in dinosaurs" v-bind:value="dinosaur.name">{{dinosaur.name}}</option>
+        </select>
+        <h4>Your selected dinosaur is {{selectedDinosaur}}</h4>
+        <hr />
+        <h2>Selecting Multiple Dinosaurs</h2>
+        <select v-model="selectedDinosaurs" multiple>
+            <option v-for="dinosaur in dinosaurs" v-bind:value="dinosaur.name">{{dinosaur.name}}</option>
+        </select>
+        <h4>Your selected dinosaurs are {{selectedDinosaurs.toString()}}</h4>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                dinosaurs:[{name:"velociraptor"},{name:"stegasaursus"},{name:"triceratops"}],
+                selectedDinosaur:'',
+                selectedDinosaurs:[],
+            }
+        })
+    </script>
+</body>
+</html>
