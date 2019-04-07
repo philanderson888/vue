@@ -958,7 +958,7 @@ Components can be used multiple times
 </div>
 ```
 
-### Component Global Data
+### Component Global And Local Data
 
 We can have data common across all components
 
@@ -991,7 +991,13 @@ Vue.component(
 ```
 
 
+### Using Components In Vue : Using the x-template syntax
 
+We can also create components using the following
+
+```javascript
+
+```
 
 
 
