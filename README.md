@@ -1,6 +1,6 @@
 # A place for learning VueJS
 
-Here is a learning repository for learning basic VueJS
+Here is a learning repository for learning basic VueJS.
 
 ## Contents
 
