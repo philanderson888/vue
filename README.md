@@ -24,6 +24,10 @@ Here is a learning repository for learning basic VueJS.
 
 ## Introduction To VueJS
 
+Vue creates components with HTML/CSS/Javascript.
+
+Vue works with NativeScript - see https://www.npmjs.com/package/nativescript-vue-template
+
 ### Who to follow
 
 Follow Gregg Pollack from vuemastery.com
@@ -40,35 +44,31 @@ Follow Evan You who was the creator of Vue.js
 
 [Vue CLI 3 at https://cli.vuejs.org/guide/](https://cli.vuejs.org/guide/)
 
-### Vue Intro
-
-Vue creates components with HTML/CSS/Javascript.
-
-Vue works with NativeScript - see https://www.npmjs.com/package/nativescript-vue-template
-
 ### Vue Plugin For Sublime
 
 Download [https://github.com/vuejs/vue-syntax-highlight](https://github.com/vuejs/vue-syntax-highlight) to your Sublime Text 3 Packages folder
 
 ## Angular vs React vs Vue
 
-There are two main popular libraries - Angular and React.
-
-But in 2018 Vue has gained much ground and this tutorial is all about it.
+### Angular
 
 Angular was created by Google and released in 2010
 
-Angular2 was released in 2016
-
 Angular original is called AngularJS
+
+Angular2 was released in 2016
 
 Angular 2+ is called Angular.
 
 Angular 7 is the latest version as of October 2018.
 
+### React
+
 React is developed by Facebook and was released in 2013.
 
 Facebook extensively uses React in Facebook, Instagram and WhatsApp.  It's used by Uber for example.
+
+### Vue
 
 Vue is created by ex-Google employee Evan You in 2014.
 
@@ -95,7 +95,6 @@ We can access the Vue library either online via a CDN or offline
 <script src="assets/js/vue.js"></script>
 ```
 
-
 ## Vue In Visual Studio
 
 https://docs.microsoft.com/en-us/visualstudio/javascript/quickstart-vuejs-with-nodejs?view=vs-2017
@@ -111,7 +110,7 @@ New Project, Typescript, Basic VueJS Application
 
 
 
-## Hello World
+## Vue Hello World
 
 We can create a `hello world` vue file inside a regular .html file
 
@@ -139,7 +138,7 @@ Notice that the app is rendering live and we can prove this by opening up the Ch
 
 
 
-# Creating Single-File Vue App From Scratch 
+## Creating Single-File Vue App From Scratch 
 
 Egghead-01
 
