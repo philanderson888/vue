@@ -453,11 +453,11 @@ So now the title appears in Uppercase for first letter, and the URL appears in a
 
 [v-bind:class - Dynamically Updating CSS](#v-bindclass---dynamically-updating-css)
 
-[Enabling/Disabling Screen Items](#enabling-disabling-screen-items)
+[Enabling/Disabling Screen Items](#enable-or-disable-an-item)
 
-[Inline CSS](#inline-css)
+[Inline CSS](#setting-inline-css-styles)
 
-[v-if/else](#v-if-else)
+[v-if/else](#v-if-and-v-else)
 
 [v-show](#v-show)
 
@@ -936,6 +936,15 @@ styles(){
 
 Components are used to break bigger apps up. Can separate into .vue files if needed
 
+[Creating A Component](#create-a-component)
+
+[Using A Component](#using-a-component)
+
+[Reusing Components](#reusing-components)
+
+[Component Local And Global Data](#component-global-and-local-data)
+
+[Using Components With The x-template syntax](#using-components-in-vue--using-the-x-template-syntax)
 
 ### Create a component
 
