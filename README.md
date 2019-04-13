@@ -10,6 +10,8 @@ Here is a learning repository for learning basic VueJS.
 
 [Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model, v-show,v-on:keyup,v-on:click)](#basic-vue-syntax)
 
+[Slightly More Advanced Topics : Computed Properties, Watching, Dynamically Updating CSS, Enabling/Disabling screen items, Inline CSS, v-if/else, v-show](#vue-slightly-more-advanced-topics)
+
 [Working With Forms](#working-with-forms)
 
 [Vue Classes](#vue-classes)
@@ -184,7 +186,7 @@ var card = new Vue({
 
 [v-model : binding data on screen to fields in data](#v-model--binding-data-fields)
 
-
+[Checking for values to be not null](#checking-a-value-is-not-null)
 
 ### v-html
 
@@ -442,6 +444,23 @@ filters:{
 ```
 
 So now the title appears in Uppercase for first letter, and the URL appears in all lower case regardless of the input.
+
+## Vue Slightly More Advanced Topics
+
+[Computed Properties](#computed-properties)
+
+[Watching](#watching)
+
+[Dynamically Updating CSS](#dynamically-updating-css)
+
+[Enabling/Disabling Screen Items](#enabling-disabling-screen-items)
+
+[Inline CSS](#inline-css)
+
+[v-if/else](#v-if-else)
+
+[v-show](#v-show)
+
 
 ## Computed Properties
 
