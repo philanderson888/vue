@@ -1074,6 +1074,9 @@ We can also create components using the following
 
 </pre>
 
+## Vue Client
+
+The Vue client is used to quickly scaffold different types of Vue projects from scratch.  The latest iteration is Vue Client version 3.
 
 ## Vue CLI 3
 
