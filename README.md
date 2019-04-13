@@ -451,7 +451,7 @@ So now the title appears in Uppercase for first letter, and the URL appears in a
 
 [Watching](#watching)
 
-[Dynamically Updating CSS](#dynamically-updating-css)
+[v-bind:class - Dynamically Updating CSS](#v-bind-class-dynamically-updating-css)
 
 [Enabling/Disabling Screen Items](#enabling-disabling-screen-items)
 
@@ -569,7 +569,7 @@ which can make our HTML appear or disappear
 <h3 id="populationWarning">Population Limit Exceeded!!!</h3>
 ```
 
-### Dynamically Changing CSS Classes with v-bind:class
+### v-bind:class - Dynamically Updating CSS
 
 v-bind:class="{style:styleIsApplied}"
 
