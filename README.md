@@ -389,7 +389,7 @@ We can now apply the filter with
 Which will now capitalize the first letter of every heading
 
 
-### Checking for null input value in a form
+### Checking a value is not null
 
 Just check for 
 
