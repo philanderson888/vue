@@ -176,6 +176,16 @@ var card = new Vue({
 
 [v-on:keyup](#v-onkeyup)
 
+[Adding items to an array](#dynamically-adding-items-to-a-list)#
+
+[v-for loop using an index](#v-for-with-index)
+
+[Remoing items from an array](#adding-a-delete-button)
+
+[v-model : binding data on screen to fields in data](#v-model--binding-data-fields)
+
+
+
 ### v-html
 
 To make the `html` display properly we can change the syntax to 
@@ -347,9 +357,11 @@ addItem(){
 ```
 
 
-### Adding filters eg <h1>{{ field1 : filterByThis }}
+### Adding display filters
 
 We can filter our lists and either display, hide or change the content.  
+
+We do this by creating a `filters` block in our Vue instance and accessing the named filter as a | pipe after our display item on screen eg `<h4>{{dinosaur.name | capitalize}}</h4>`
 
 For example we can ensure the first letter is capitalised
 
