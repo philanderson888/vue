@@ -178,7 +178,7 @@ var card = new Vue({
 
 [v-on:keyup](#v-onkeyup)
 
-[Adding items to an array](#dynamically-adding-items-to-a-list)#
+[Adding items to an array](#dynamically-adding-items-to-a-list)
 
 [v-for loop using an index](#v-for-with-index)
 
@@ -544,15 +544,6 @@ We can add, alongside data: and methods: and other blocks, a new block called `w
 This can be aware of changing values on our page.
 
 We must name our watched property to be the name of another data property or computed property etc which already exists.
-
-```javascript
-watch:{
-  totalDinosaurs(){
-    if(this.totalDinosaurs>=10){
-      document.getElementById('populationWarning').style.visibility="visible"
-    }
-    else{
-      document.getElementById('populationWarning').style.visibility="hidden"
     }
   }
 },
@@ -569,11 +560,28 @@ which can make our HTML appear or disappear
 <h3 id="populationWarning">Population Limit Exceeded!!!</h3>
 ```
 
+
 ### v-bind:class - Dynamically Updating CSS
 
-v-bind:class="{style:styleIsApplied}"
+With CSS we can apply or not apply CSS Styles using the following syntax
 
-We can bind HTML form input data and use it to set CSS class styles
+```vue
+v-bind:class="{style:styleIsApplied}"
+```
+
+We can change multiple classes using this syntax
+
+```html
+<div v-bind:class="{ customStyle1:isStyle1Applied, customStyle2:isStyle2Applied}" 
+```
+
+or this syntax
+
+```html
+<button  class="styleMe" v-bind:class="[{large:isLarge},{rounded:isRounded}]" 
+```
+
+As an example, we can bind HTML form input data and use it to set CSS class styles where the custom styles are applied depending if the values are true or false.
 
 Let's create a simple set of elements with styling data which can be input.
 
@@ -618,17 +626,6 @@ So the default width is 10% but when 'large' is ticked the width becomes 20% of 
 
 See [html-form-01.html](html-form-01.html)
 
-### Binding an array of classes
-
-We can bind multiple classes by using an array
-
-```html
-<button  class="styleMe" v-bind:class="[{large:isLarge},{rounded:isRounded}]" 
-```
-
-
-
-
 ### Enable or disable an item
 
 We can `v-bind:disabled` to an item
@@ -647,12 +644,12 @@ We can `v-bind:disabled` to an item
 To set inline styles we can use computed properties
 
 ```html
-<button v-bind:style="styles">
+<button v-bind:style="computedStyle">
 ```
 
 ```javascript
 computed:{
-  styles(){
+  computedStyle(){
     return{
       'margin-left':this.buttonMarginLeft + '%',
       background:this.backgroundColor,
@@ -901,36 +898,7 @@ See [select-box-01.html](select-box-01.html) for a working example
 
 
 
-## Vue Classes
 
-With CSS we can apply or not apply CSS Styles using the following syntax
-
-```html
-<div v-bind:class="{ customStyle1:isStyle1Applied, customStyle2:isStyle2Applied}" 
-```
-
-where the custom styles are applied depending if the values are true or false
-
-
-## Vue Inline Styles
-
-We can also set inline styles with
-
-```html
-<div v-bind:style="computedStyle">
-```
-
-where computedStyle is a computed property 
-
-```javascript
-styles(){
-    return {
-        'margin-left':this.buttonMarginLeft + '%',
-         background:this.backgroundColor,
-         color:this.fontColor,
-    }
-}
-```
 
 ## Vue Components
 
