@@ -451,7 +451,7 @@ So now the title appears in Uppercase for first letter, and the URL appears in a
 
 [Watching](#watching)
 
-[v-bind:class - Dynamically Updating CSS](#v-bind-class-dynamically-updating-css)
+[v-bind:class - Dynamically Updating CSS](#v-bindclass---dynamically-updating-css)
 
 [Enabling/Disabling Screen Items](#enabling-disabling-screen-items)
 
