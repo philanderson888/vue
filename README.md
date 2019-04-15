@@ -1002,11 +1002,34 @@ Vue.component(
 
 We can also create components using the following
 
-```javascript
-
+```html
+<script type="text/x-template" id="component01">
+    <div>
+        <button v-on:click="quantity++">{{quantity}}</button>{{name}}
+    </div>
+</script>
 ```
 
+and use them by creating a 'components' section inside our Vue instance
 
+```vue
+components:{
+    'component01':{
+        template:"#component01",
+        props:["name","quantity"],
+    }
+},
+```
+
+`props` are the data items which will be fed into the component
+
+Note that we can also add `methods` and even `data` although the `data` has to be returned as a function.
+
+See `component-05.html` for a worked example of this.
+
+### Talking to the parent from the child component
+
+We can trigger an event in the child component and use it to call a method in the parent component.
 
 
 
