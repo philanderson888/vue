@@ -20,9 +20,15 @@ Here is a learning repository for learning basic VueJS.
 
 [Working With Events In Vue](#working-with-events-in-vue)
 
+[Vue Notes On The Vue Handbook by Flavio Copes](https://flaviocopes.com/tags/vue/)
+
+[Vue Client]
+
 [Vue Tutorial Walkthroughs](#vue-tutorial-walkthroughs)
 
 [Vue In Visual Studio](vue-in-visual-studio)
+
+[Vue Glossary](#vue-glossary)
 
 ## Introduction To VueJS
 
@@ -1025,7 +1031,7 @@ components:{
 
 Note that we can also add `methods` and even `data` although the `data` has to be returned as a function.
 
-See `component-05.html` for a worked example of this.
+See [component-05.html](component-05.html) for a worked example of this.
 
 ### Talking to the parent from the child component
 
@@ -1053,9 +1059,41 @@ We can trigger an event in the child component and use it to call a method in th
 
 
 
+</pre>
+
+## Vue Notes On The Vue Handbook by Flavio Copes
+
+[The Vue Handbook By Flavio Copes](https://flaviocopes.com/tags/vue/)
+
+These notes are on topics up until introducing the Vue client
+
+### Introduction
+
+Vue is small, fast and simple. 
+
+The size of Vue is only 24kb.
+
+It's an `indie` project not driven by an corporation
+
+Vue is a `progressive framework` which means that it can happily coexist with other frameworks and can be added in via a simple script tag
+
+React uses JSX
+
+Vue uses a `templating` system
+
+Vue can use any valid HTML file rather than the more complex JSX which React uses.
+
+Vuex is the state management library which takes after Redux
+
+vue-router handles routing
+
+vuex handles state
 
 
 
+
+
+<pre>
 
 
 
