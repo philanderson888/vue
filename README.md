@@ -1037,6 +1037,35 @@ See [component-05.html](component-05.html) for a worked example of this.
 
 We can trigger an event in the child component and use it to call a method in the parent component.
 
+We can use the following syntax to `emit` an event in the child component and listen for it in the parent component
+
+```js
+new Vue({
+  el:"#app",
+  data:{},
+  methods:{},
+  components:{
+    'component-01':{
+      template:"component-01",
+      props:[],
+      data(){
+
+      },
+      methods:{
+        increment(){
+          this.quantity+=1
+          this.emit('increment',1)
+        }
+      }
+    }
+  },
+})
+```
+
+so we can use this to emit an event in the child component and update the parent component.
+
+See [component-06-pass-data.html](component-06-pass-data.html) for a worked example of this
+
 
 
 
