@@ -1,4 +1,4 @@
-# A place for learning VueJS.
+# A place for learning VueJS
 
 Here is a learning repository for learning basic VueJS.
 
