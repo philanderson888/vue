@@ -1067,7 +1067,79 @@ so we can use this to emit an event in the child component and update the parent
 See [component-06-pass-data.html](component-06-pass-data.html) for a worked example of this
 
 
+### Adding multiple components with the x-template syntax
 
+Let's now add a second template
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>Vue Components</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <ul>
+            <hr />
+            <li v-for="dinosaur in dinosaurs">
+                <component01 
+                    v-bind:name="dinosaur.name"
+                    v-bind:quantity="dinosaur.quantity"
+                    ></component01>
+                <component02 
+                    v-bind:name="dinosaur.name"
+                    v-bind:diet="dinosaur.diet"
+                    ></component02>
+                    <hr />
+            </li>
+        </ul>
+    </div>
+    <script type="text/x-template" id="component01">
+        <div>
+            Component01--<button v-on:click="increment">{{quantity}}</button> {{name}}
+        </div>
+    </script>
+        <script type="text/x-template" id="component02">
+        <div>
+            Component02--{{name}} eats {{diet}}
+        </div>
+    </script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                title:"Using 2 components",
+                dinosaurs:[{name:"Tyrannosaurus",quantity:2,diet:"dinosaurs"},{name:"Stegosaurus",quantity:3,diet:"meat"}],
+                total:0,
+            },
+            created:{
+            },
+            components:{
+                'component01':{
+                    template:"#component01",
+                    props:["name","quantity"],
+                    methods:{
+                        increment(){
+                            this.quantity++
+                        },
+                    },
+                },
+                'component02':{
+                    template:"#component02",
+                    props:["name","diet"],
+                },
+            },
+        })
+    </script>
+</body>
+</html>
+```
 
 
 
