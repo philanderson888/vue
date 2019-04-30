@@ -1142,7 +1142,11 @@ Let's now add a second template
 ```
 
 
+## Toggling Between Templates
 
+We can now toggle between our two templates 
+
+After creating our two templates we can set a property `currentView` 
 
 
 
