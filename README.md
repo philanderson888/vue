@@ -4,6 +4,8 @@ Here is a learning repository for learning basic VueJS.
 
 ## Contents
 
+[Vue Glossary](#vue-glossary)
+
 [Introduction To VueJS](#introduction-to-vuejs)
 
 [Getting Started : Hello World VueJS](#hello-world)
@@ -23,6 +25,10 @@ Here is a learning repository for learning basic VueJS.
 [Vue Tutorial Walkthroughs](#vue-tutorial-walkthroughs)
 
 [Vue In Visual Studio](vue-in-visual-studio)
+
+## Vue Glossary
+
+GridSome https://gridsome.org/docs : Vue + CSS Grid out of the box
 
 ## Introduction To VueJS
 
