@@ -2395,6 +2395,20 @@ Change the order to orderBy('created_at','desc')
 
 https://gridsome.org/docs
 
+```bash
+# install
+yarn global add @gridsome/cli
+# generate new project
+gridsome create test-project
+cd test-project
+# run at localhost:8080
+gridsome develop 
+```
+
+Now add `.vue` components in the /pages directory
+
+
+
 ### pnpm
 
 Saves only one copy of a needed library
