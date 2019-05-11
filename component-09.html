@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>Vue Components</title>
+</head>
+<body>
+    <div id="app">
+        <p>Parent value: {{parentValue}}</p>
+        <child v-model="parentValue"></child>
+    </div>
+    <template id="child">
+        <input type="text" v-bind:childValue="childValue" v-on:input="updateValue($event.target.value)">
+    </template>
+    <script>
+    Vue.component('child', {
+        template: '#child',
+        props: ['childValue'],
+        methods: {
+            updateValue: function (value) {
+                this.$emit('input', value);
+            }
+        }
+    });
+    new Vue({
+        el: '#app',
+        data: {
+            parentValue: 'hello'
+        }
+    });
+    </script>
+</body>
+</html>

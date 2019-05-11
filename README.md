@@ -22,6 +22,10 @@ Here is a learning repository for learning basic VueJS.
 
 [Working With Events In Vue](#working-with-events-in-vue)
 
+[Vue Notes On The Vue Handbook by Flavio Copes](https://flaviocopes.com/tags/vue/)
+
+[Vue Client]
+
 [Vue Tutorial Walkthroughs](#vue-tutorial-walkthroughs)
 
 [Vue In Visual Studio](vue-in-visual-studio)
@@ -29,6 +33,8 @@ Here is a learning repository for learning basic VueJS.
 ## Vue Glossary
 
 GridSome https://gridsome.org/docs : Vue + CSS Grid out of the box
+
+[Vue Glossary](#vue-glossary)
 
 ## Introduction To VueJS
 
@@ -1031,14 +1037,115 @@ components:{
 
 Note that we can also add `methods` and even `data` although the `data` has to be returned as a function.
 
-See `component-05.html` for a worked example of this.
+See [component-05.html](component-05.html) for a worked example of this.
 
 ### Talking to the parent from the child component
 
 We can trigger an event in the child component and use it to call a method in the parent component.
 
+We can use the following syntax to `emit` an event in the child component and listen for it in the parent component
+
+```js
+new Vue({
+  el:"#app",
+  data:{},
+  methods:{},
+  components:{
+    'component-01':{
+      template:"component-01",
+      props:[],
+      data(){
+
+      },
+      methods:{
+        increment(){
+          this.quantity+=1
+          this.emit('increment',1)
+        }
+      }
+    }
+  },
+})
+```
+
+so we can use this to emit an event in the child component and update the parent component.
+
+See [component-06-pass-data.html](component-06-pass-data.html) for a worked example of this
 
 
+### Adding multiple components with the x-template syntax
+
+Let's now add a second template
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>Vue Components</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <ul>
+            <hr />
+            <li v-for="dinosaur in dinosaurs">
+                <component01 
+                    v-bind:name="dinosaur.name"
+                    v-bind:quantity="dinosaur.quantity"
+                    ></component01>
+                <component02 
+                    v-bind:name="dinosaur.name"
+                    v-bind:diet="dinosaur.diet"
+                    ></component02>
+                    <hr />
+            </li>
+        </ul>
+    </div>
+    <script type="text/x-template" id="component01">
+        <div>
+            Component01--<button v-on:click="increment">{{quantity}}</button> {{name}}
+        </div>
+    </script>
+        <script type="text/x-template" id="component02">
+        <div>
+            Component02--{{name}} eats {{diet}}
+        </div>
+    </script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                title:"Using 2 components",
+                dinosaurs:[{name:"Tyrannosaurus",quantity:2,diet:"dinosaurs"},{name:"Stegosaurus",quantity:3,diet:"meat"}],
+                total:0,
+            },
+            created:{
+            },
+            components:{
+                'component01':{
+                    template:"#component01",
+                    props:["name","quantity"],
+                    methods:{
+                        increment(){
+                            this.quantity++
+                        },
+                    },
+                },
+                'component02':{
+                    template:"#component02",
+                    props:["name","diet"],
+                },
+            },
+        })
+    </script>
+</body>
+</html>
+```
 
 
 
@@ -1059,9 +1166,41 @@ We can trigger an event in the child component and use it to call a method in th
 
 
 
+</pre>
+
+## Vue Notes On The Vue Handbook by Flavio Copes
+
+[The Vue Handbook By Flavio Copes](https://flaviocopes.com/tags/vue/)
+
+These notes are on topics up until introducing the Vue client
+
+### Introduction
+
+Vue is small, fast and simple. 
+
+The size of Vue is only 24kb.
+
+It's an `indie` project not driven by an corporation
+
+Vue is a `progressive framework` which means that it can happily coexist with other frameworks and can be added in via a simple script tag
+
+React uses JSX
+
+Vue uses a `templating` system
+
+Vue can use any valid HTML file rather than the more complex JSX which React uses.
+
+Vuex is the state management library which takes after Redux
+
+vue-router handles routing
+
+vuex handles state
 
 
 
+
+
+<pre>
 
 
 
