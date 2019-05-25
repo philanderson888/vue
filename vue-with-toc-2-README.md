@@ -4,135 +4,43 @@ Here is a learning repository for learning basic VueJS.
 
 ## Contents
 
+[Vue Glossary](#vue-glossary)
+<!-- TOC -->autoauto- [A place for learning VueJS](#a-place-for-learning-vuejs)auto    - [Contents](#contents)auto    - [Vue Glossary](#vue-glossary)auto    - [Introduction To VueJS](#introduction-to-vuejs)auto        - [Who to follow](#who-to-follow)auto        - [Resources](#resources)auto        - [Vue Plugin For Sublime](#vue-plugin-for-sublime)auto    - [Angular vs React vs Vue](#angular-vs-react-vs-vue)auto        - [Angular](#angular)auto        - [React](#react)auto        - [Vue](#vue)auto    - [Vue Versions](#vue-versions)auto    - [Vue Library](#vue-library)auto    - [Vue In Visual Studio](#vue-in-visual-studio)auto    - [Vue Hello World](#vue-hello-world)auto    - [Creating Single-File Vue App From Scratch](#creating-single-file-vue-app-from-scratch)auto    - [Basic Vue Syntax](#basic-vue-syntax)auto        - [v-html](#v-html)auto        - [Accessing vue elements](#accessing-vue-elements)auto        - [List items](#list-items)auto        - [v-on:click](#v-onclick)auto        - [v-on:keyup](#v-onkeyup)auto        - [Dynamically adding items to a list](#dynamically-adding-items-to-a-list)auto        - [v-for with index](#v-for-with-index)auto        - [Adding a delete button](#adding-a-delete-button)auto        - [v-model : binding data fields](#v-model--binding-data-fields)auto        - [Adding display filters](#adding-display-filters)auto        - [Checking a value is not null](#checking-a-value-is-not-null)auto        - [filter | undercase](#filter--undercase)auto        - [piping filters](#piping-filters)auto    - [Vue Slightly More Advanced Topics](#vue-slightly-more-advanced-topics)auto    - [Computed Properties](#computed-properties)auto        - [Watching](#watching)auto- [development or production](#development-or-production)autoauto<!-- /TOC -->
+[Introduction To VueJS](#introduction-to-vuejs)
 
-- [A place for learning VueJS](#a-place-for-learning-vuejs)
-  - [Contents](#contents)
-  - [Resources](#resources)
-    - [The Vue Handbook by Flavio Copes](#the-vue-handbook-by-flavio-copes)
-  - [Introduction To VueJS](#introduction-to-vuejs)
-    - [Who to follow](#who-to-follow)
-    - [Resources](#resources-1)
-    - [Vue Plugin For Sublime](#vue-plugin-for-sublime)
-  - [Angular vs React vs Vue](#angular-vs-react-vs-vue)
-    - [Angular](#angular)
-    - [React](#react)
-    - [Vue](#vue)
-  - [Vue Versions](#vue-versions)
-  - [Vue Library](#vue-library)
-  - [Vue In Visual Studio](#vue-in-visual-studio)
-  - [Vue Hello World](#vue-hello-world)
-  - [Creating Single-File Vue App From Scratch](#creating-single-file-vue-app-from-scratch)
-  - [Basic Vue Syntax](#basic-vue-syntax)
-    - [v-html](#v-html)
-    - [Accessing vue elements](#accessing-vue-elements)
-    - [List items](#list-items)
-    - [v-on:click](#v-onclick)
-    - [v-on:keyup](#v-onkeyup)
-    - [Dynamically adding items to a list](#dynamically-adding-items-to-a-list)
-    - [v-for with index](#v-for-with-index)
-    - [Adding a delete button](#adding-a-delete-button)
-    - [v-model : binding data fields](#v-model--binding-data-fields)
-    - [Adding display filters](#adding-display-filters)
-    - [Checking a value is not null](#checking-a-value-is-not-null)
-    - [filter | undercase](#filter--undercase)
-    - [piping filters](#piping-filters)
-  - [Vue Slightly More Advanced Topics](#vue-slightly-more-advanced-topics)
-    - [Computed Properties](#computed-properties)
-    - [Watching](#watching)
-    - [v-bind:class - Dynamically Updating CSS](#v-bindclass---dynamically-updating-css)
-    - [Enable or disable an item](#enable-or-disable-an-item)
-    - [Setting inline CSS Styles](#setting-inline-css-styles)
-    - [v-if and v-else](#v-if-and-v-else)
-    - [v-if](#v-if)
-    - [v-else](#v-else)
-    - [v-show](#v-show)
-  - [Working With Forms](#working-with-forms)
-    - [v-on:submit](#v-onsubmit)
-    - [Vue With Checkboxes](#vue-with-checkboxes)
-    - [Vue With Radio Buttons](#vue-with-radio-buttons)
-    - [Vue With Drop-Down Boxes (HTML Select)](#vue-with-drop-down-boxes-html-select)
-  - [Vue Components](#vue-components)
-    - [Create a component](#create-a-component)
-    - [Using a component](#using-a-component)
-    - [Reusing components](#reusing-components)
-    - [Component Global And Local Data](#component-global-and-local-data)
-    - [Using Components In Vue : Using the x-template syntax](#using-components-in-vue--using-the-x-template-syntax)
-    - [Talking to the parent from the child component](#talking-to-the-parent-from-the-child-component)
-    - [Adding multiple components with the x-template syntax](#adding-multiple-components-with-the-x-template-syntax)
-  - [Vue Client - 3](#vue-client---3)
-  - [Vue CLI 3](#vue-cli-3)
-  - [Creating a project](#creating-a-project)
-    - [Running a project](#running-a-project)
-    - [Running a project with pnpm](#running-a-project-with-pnpm)
-    - [Vue Serve with Hot Reloading](#vue-serve-with-hot-reloading)
-    - [Adding plugins](#adding-plugins)
-    - [Building for modern browsers](#building-for-modern-browsers)
-    - [API keys](#api-keys)
-- [Vue Tutorial Walkthroughs](#vue-tutorial-walkthroughs)
-  - [Vue Tutorial 1: Traversy Media : Vue in 60 minutes](#vue-tutorial-1-traversy-media--vue-in-60-minutes)
-  - [Installing VUE](#installing-vue)
-  - [Hello World](#hello-world)
-    - [Hello World manually](#hello-world-manually)
-  - [Methods](#methods)
-    - [Access other fields with `this`](#access-other-fields-with-this)
-  - [{{ only work when we expect text to be present, not HTML attributes }}](#-only-work-when-we-expect-text-to-be-present-not-html-attributes-)
-  - [v-bind](#v-bind)
-  - [href](#href)
-  - [Directives : passing in attribute values](#directives--passing-in-attribute-values)
-  - [Setting data values](#setting-data-values)
-  - [Components](#components)
-  - [Analysing a Vue app](#analysing-a-vue-app)
-  - [Routing](#routing)
-  - [Vue basic code snippets](#vue-basic-code-snippets)
-  - [Vue Client 3](#vue-client-3)
-  - [Vue Serve](#vue-serve)
-  - [Building projects](#building-projects)
-  - [Saved preferences](#saved-preferences)
-  - [vue ui](#vue-ui)
-  - [Applying CSS Classes to VUE](#applying-css-classes-to-vue)
-  - [Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes](#vue-tutorial-2--connecting-vue-to-firebase-database-in-54-minutes)
-  - [Vue Backends](#vue-backends)
-  - [Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes](#vue-tutorial-2--connecting-vue-to-firebase-database-in-54-minutes-1)
-- [Vue With PHP : Laravel](#vue-with-php--laravel)
-  - [Vue With PHP : Laravel : Tutorial 1:](#vue-with-php--laravel--tutorial-1)
-    - [Traversy Media : Laravel 5.5 API From Scratch - 45 minutes](#traversy-media--laravel-55-api-from-scratch---45-minutes)
-  - [Laravel Tutorial 2 : Traversy Media : Full Stack Vue.js & Laravel - 42 minutes](#laravel-tutorial-2--traversy-media--full-stack-vuejs--laravel---42-minutes)
-  - [Vue Glossary](#vue-glossary)
-    - [GridSome - Vue and CSS Grid out of the box](#gridsome---vue-and-css-grid-out-of-the-box)
-    - [pnpm](#pnpm)
+[Getting Started : Hello World VueJS](#hello-world)
 
-## Resources
+[Getting Started : Simple VueJS Syntax Commands (v-if-else, v-bind, v-model, v-show,v-on:keyup,v-on:click)](#basic-vue-syntax)
 
-### The Vue Handbook by Flavio Copes
+[Slightly More Advanced Topics : Computed Properties, Watching, Dynamically Updating CSS, Enabling/Disabling screen items, Inline CSS, v-if/else, v-show](#vue-slightly-more-advanced-topics)
 
-[The Vue Handbook By Flavio Copes](https://flaviocopes.com/tags/vue/)
+[Working With Forms](#working-with-forms)
+
+[Vue Classes](#vue-classes)
+
+[Vue Components](#vue-components)
+
+[Working With Events In Vue](#working-with-events-in-vue)
+
+[Vue Notes On The Vue Handbook by Flavio Copes](https://flaviocopes.com/tags/vue/)
+
+[Vue Client]
+
+[Vue Tutorial Walkthroughs](#vue-tutorial-walkthroughs)
+
+[Vue In Visual Studio](vue-in-visual-studio)
+
+## Vue Glossary
+
+GridSome https://gridsome.org/docs : Vue + CSS Grid out of the box
+
+[Vue Glossary](#vue-glossary)
 
 ## Introduction To VueJS
 
 Vue creates components with HTML/CSS/Javascript.
 
 Vue works with NativeScript - see https://www.npmjs.com/package/nativescript-vue-template
-
-Vue is small, fast and simple. 
-
-The size of Vue is only 24kb.
-
-It's an `indie` project not driven by an corporation
-
-Vue is a `progressive framework` which means that it can happily coexist with other frameworks and can be added in via a simple script tag
-
-React uses JSX
-
-Vue uses a `templating` system
-
-Vue can use any valid HTML file rather than the more complex JSX which React uses.
-
-Vuex is the state management library which takes after Redux
-
-vue-router handles routing
-
-vuex handles state
-
 
 ### Who to follow
 
@@ -149,9 +57,6 @@ Follow Evan You who was the creator of Vue.js
 [Advanced Documentation at vuemastery.com](https://www.vuemastery.com)
 
 [Vue CLI 3 at https://cli.vuejs.org/guide/](https://cli.vuejs.org/guide/)
-
-[Vue School](https://vueschool.io)
-
 
 ### Vue Plugin For Sublime
 
@@ -569,7 +474,7 @@ So now the title appears in Uppercase for first letter, and the URL appears in a
 [v-show](#v-show)
 
 
-### Computed Properties
+## Computed Properties
 
 These notes are taken from VueJS on Egghead Video 4 
 
@@ -1243,16 +1148,69 @@ Let's now add a second template
 ```
 
 
-## Toggling Between Templates
-
-We can now toggle between our two templates 
-
-After creating our two templates we can set a property `currentView` 
 
 
 
 
-## Vue Client - 3
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+
+## Vue Notes On The Vue Handbook by Flavio Copes
+
+[The Vue Handbook By Flavio Copes](https://flaviocopes.com/tags/vue/)
+
+These notes are on topics up until introducing the Vue client
+
+### Introduction
+
+Vue is small, fast and simple. 
+
+The size of Vue is only 24kb.
+
+It's an `indie` project not driven by an corporation
+
+Vue is a `progressive framework` which means that it can happily coexist with other frameworks and can be added in via a simple script tag
+
+React uses JSX
+
+Vue uses a `templating` system
+
+Vue can use any valid HTML file rather than the more complex JSX which React uses.
+
+Vuex is the state management library which takes after Redux
+
+vue-router handles routing
+
+vuex handles state
+
+
+
+
+
+<pre>
+
+
+
+
+
+
+
+</pre>
+
+## Vue Client
 
 The Vue client is used to quickly scaffold different types of Vue projects from scratch.  The latest iteration is Vue Client version 3.
 
@@ -1363,17 +1321,18 @@ VUE_APP_TITLE: "App Title"
 
 
 
+## Vue Tutorial Walkthroughs
 
+### [Vue Tutorial 1: Traversy Media : Vue in 60 minutes](#vue-tutorial-1-traversy-media--vue-in-60-minutes-1)
 
-
-# Vue Tutorial Walkthroughs
-
+### [Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes](#vue-tutorial-2--connecting-vue-to-firebase-database-in-54-minutes-1)
 
 ## Vue Tutorial 1: Traversy Media : Vue in 60 minutes
 
-[https://www.youtube.com/watch?v=z6hQqgvGI4Y](https://www.youtube.com/watch?v=z6hQqgvGI4Y) 
+[https://www.youtube.com/watch?v=z6hQqgvGI4Y](https://www.youtube.com/watch?v=z6hQqgvGI4Y) Installing VUE CDN NPM Vue-Cli Bower
 
-1.  Install VUE CDN NPM Vue-Cli Bower
+## Building the Vue Lab
+
 2.  Npm install -g vue-cli
 3.  Vue init webpack vue-01
 4.  Cd vue-01
@@ -1385,9 +1344,35 @@ VUE_APP_TITLE: "App Title"
 10.  Exact url is https://jsonplaceholder.typicode.com/users
 11.  Adding in element for styling : npm install element-ui --save
 
+## Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes
+
+[https://www.youtube.com/watch?v=we4zuQIXmnw](https://www.youtube.com/watch?v=we4zuQIXmnw) [https://medium.com/codingthesmartway-com-blog/vue-js-2-firebase-e4b2479e35a8"](https://medium.com/codingthesmartway-com-blog/vue-js-2-firebase-e4b2479e35a8)
+
+## Vue with Firebase
+
+2.  Firebase.Google.com
+3.  Databases : Real Time
+
+5.  Npm install -g vue-cli
+6.  Vue init webpack vue-01
+7.  Cd vue-01
+8.  Npm install
+9.  Npm run dev
+
+
+
+
+
+
+## Vue Tutorial 1: Traversy Media : Vue in 60 minutes
+
+https://www.youtube.com/watch?v=z6hQqgvGI4Y
+
+
 
 ## Installing VUE
   
+
   CDN
   
   NPM
@@ -1419,6 +1404,7 @@ Exact url is https://jsonplaceholder.typicode.com/users
 Adding in element for styling : npm install element-ui --save
 
 
+</pre>
 
 ## Hello World
 
@@ -2013,7 +1999,7 @@ which refers to 2 components
 
 
 
-## Vue Client 3
+## Vue Client
 
 Version 1 and 2 were installed with 
 
@@ -2085,7 +2071,7 @@ Yarn can be used instead of npm to install packages
 
 ## Saved preferences
 
-Saved preferences will be saved in the `~/.vuerc` file
+Saved preferences will be saved in the ~/.vuerc file
 
 
 ## vue ui
@@ -2105,24 +2091,46 @@ Projects can be creates with a GUI
 
 
 
+## Vue Tutorial : Connecting VUE to Firebase Database in 54 minutes
 
 
+https://www.youtube.com/watch?v=we4zuQIXmnw
 
-## Applying CSS Classes to VUE
+https://medium.com/codingthesmartway-com-blog/vue-js-2-firebase-e4b2479e35a8"
 
-```html
+Vue with Firebase
+    
+Firebase.Google.com
+
+Databases : Real Time
+
+    
+
+    
+Npm install -g vue-cli
+
+    
+Vue init webpack vue-01
+
+    
+Cd vue-01
+
+    
+Npm install
+
+    
+Npm run dev
+
+
+Applying CSS Classes to VUE
+
 <div v-bind:class="{active:isActive}"></div>
 <div v-bind:style="{color:activeColor}"></div>
-```
-
 Vue file
-
-```js
 data{
 	isActive:true,
 	activeColor:'red'
 }
-```
 Vue Components
 
 Components are used to break bigger apps up. 
@@ -2131,29 +2139,16 @@ Can separate into .vue files if needed
     
 Create a component
     
-```js
 Vue.component('my-component',{template:'This is my component text'})
-```
 
-```html
+
+	
+
+    
+
+    
 <div id="app"><my-component></my-component></div>
-```	
-
-
-
-
-## Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes
-
-[https://www.youtube.com/watch?v=we4zuQIXmnw](https://www.youtube.com/watch?v=we4zuQIXmnw) [https://medium.com/codingthesmartway-com-blog/vue-js-2-firebase-e4b2479e35a8"](https://medium.com/codingthesmartway-com-blog/vue-js-2-firebase-e4b2479e35a8)
-
-
-2.  Firebase.Google.com
-3.  Databases : Real Time
-5.  Npm install -g vue-cli
-6.  Vue init webpack vue-01
-7.  Cd vue-01
-8.  Npm install
-9.  Npm run dev
+	
 
 
 
@@ -2167,27 +2162,16 @@ https://medium.com/js-dojo/7-vue-js-backends-compared-74812da014f4
 
 
 
-## Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes
-
-[https://www.youtube.com/watch?v=we4zuQIXmnw](https://www.youtube.com/watch?v=we4zuQIXmnw) [https://medium.com/codingthesmartway-com-blog/vue-js-2-firebase-e4b2479e35a8"](https://medium.com/codingthesmartway-com-blog/vue-js-2-firebase-e4b2479e35a8)
-
-
-2.  Firebase.Google.com
-3.  Databases : Real Time
-5.  Npm install -g vue-cli
-6.  Vue init webpack vue-01
-7.  Cd vue-01
-8.  Npm install
-9.  Npm run dev
 
 
 
+</pre>
 
-# Vue With PHP : Laravel
+# Laravel
 
-## Vue With PHP : Laravel : Tutorial 1: 
-
-### Traversy Media : Laravel 5.5 API From Scratch - 45 minutes
+<pre>
+    
+Laravel Tutorial 1: Traversy Media : Laravel 5.5 API From Scratch - 45 minutes
 
     https://www.youtube.com/watch?v=4pc6cgisbKE
     
@@ -2330,6 +2314,9 @@ Post to add a new article : Headers add Content-Type  as application/json  and b
 
 
 
+
+</pre>
+
 ## Laravel Tutorial 2 : Traversy Media : Full Stack Vue.js & Laravel - 42 minutes
 
 https://www.youtube.com/watch?v=DJ6PD_jBtU0&t=1899s
@@ -2392,26 +2379,11 @@ Change the order to orderBy('created_at','desc')
 
 
 
+### Vue Random
+
+https://vueschool.io/
 
 ## Vue Glossary
-
-### GridSome - Vue and CSS Grid out of the box
-
-https://gridsome.org/docs
-
-```bash
-# install
-yarn global add @gridsome/cli
-# generate new project
-gridsome create test-project
-cd test-project
-# run at localhost:8080
-gridsome develop 
-```
-
-Now add `.vue` components in the /pages directory
-
-
 
 ### pnpm
 
