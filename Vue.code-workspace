@@ -1,58 +1,88 @@
 {
 	"folders": [
 		{
+			"name": "api-key-01",
 			"path": "api-key-01"
 		},
 		{
-			"path": "component-05-sub"
+			"name": "attendance-01",
+			"path": "attendance-01"
 		},
 		{
-			"path": "component-05-sub2"
-		},
-		{
-			"path": "render-01"
-		},
-		{
-			"path": "router-01"
-		},
-		{
-			"path": "router-02"
-		},
-		{
-			"path": "shopping"
-		},
-		{
-			"path": "shopping-06-splash-details"
-		},
-		{
-			"path": "vue-05"
-		},
-		{
-			"path": "vue-07-routing-01"
-		},
-		{
-			"path": "vue-08-routing-02"
-		},
-		{
-			"path": "vue-09-deploy-me"
-		},
-		{
-			"path": "vue-10-axios-01"
-		},
-		{
-			"path": "vue-shopping-list-with-firebase"
-		},
-		{
-			"path": "vue-test-01"
-		},
-		{
-			"path": "vue-test-02-testcafe"
-		},
-		{
+			"name": "church-attendance-stats",
 			"path": "church-attendance-stats"
 		},
 		{
-			"path": "attendance-01"
+			"name": "component-05-sub",
+			"path": "component-05-sub"
+		},
+		{
+			"name": "component-05-sub2",
+			"path": "component-05-sub2"
+		},
+		{
+			"name": "render-01",
+			"path": "render-01"
+		},
+		{
+			"name": "router-01",
+			"path": "router-01"
+		},
+		{
+			"name": "router-02",
+			"path": "router-02"
+		},
+		{
+			"name": "shopping",
+			"path": "shopping"
+		},
+		{
+			"name": "shopping-v2",
+			"path": "shopping-v2"
+		},
+		{
+			"name": "shopping-06-splash-details",
+			"path": "shopping-06-splash-details"
+		},
+		{
+			"name": "vue-05",
+			"path": "vue-05"
+		},
+		{
+			"name": "vue-05-v2",
+			"path": "vue-05-v2"
+		},
+		{
+			"name": "vue-07-routing-01",
+			"path": "vue-07-routing-01"
+		},
+		{
+			"name": "vue-08-routing-02",
+			"path": "vue-08-routing-02"
+		},
+		{
+			"name": "vue-09-deploy-me",
+			"path": "vue-09-deploy-me"
+		},
+		{
+			"name": "vue-10-axios-01",
+			"path": "vue-10-axios-01"
+		},
+		{
+			"name": "vue-shopping-list-with-firebase",
+			"path": "vue-shopping-list-with-firebase"
+		},
+		{
+			"name": "vue-test-01",
+			"path": "vue-test-01"
+		},
+		{
+			"name": "vue-test-02-testcafe",
+			"path": "vue-test-02-testcafe"
+		},
+		{
+			"name": "vue-2019-09-11-vue-firebase-app",
+			"path": "vue-2019-09-11-vue-firebase-app"
 		}
 	]
 }
