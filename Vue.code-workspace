@@ -83,6 +83,12 @@
 		{
 			"name": "vue-2019-09-11-vue-firebase-app",
 			"path": "vue-2019-09-11-vue-firebase-app"
+		},
+		{
+			"path": "vue-2019-09-28-hello-world"
+		},
+		{
+			"path": "vue-2019-09-29-with-firebase-login-01"
 		}
 	]
 }
