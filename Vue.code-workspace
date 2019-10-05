@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"name": "vue-2019-09-29-with-firebase-login-01",
+			"path": "vue-2019-09-29-with-firebase-login-01"
+		},
+		{
 			"name": "api-key-01",
 			"path": "api-key-01"
 		},
@@ -85,10 +89,14 @@
 			"path": "vue-2019-09-11-vue-firebase-app"
 		},
 		{
+			"name": "vue-2019-09-28-hello-world",
 			"path": "vue-2019-09-28-hello-world"
 		},
 		{
-			"path": "vue-2019-09-29-with-firebase-login-01"
+			"path": "vue-2019-10-03-components"
+		},
+		{
+			"path": "vue-2019-10-05-firebase"
 		}
 	]
 }
