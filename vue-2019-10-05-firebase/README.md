@@ -7,6 +7,17 @@ Goal : to build a simple Vue app with Firebase to
     a) Login
     b) View A List Of Usernames
 
+This project has a lot in it
+
+1) Axios to get JSON data from an API
+2) Typescript although I didn't implement classes
+3) Components
+4) Props and passing data to components
+5) Local Storage
+6) Global counters ie a button which works on different pages and stored also in localStorage
+7) Iterating a list obtained as JSON from the API on the screen
+
+
 ## Project setup
 ```
 yarn install
