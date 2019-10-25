@@ -101,6 +101,16 @@ Here is a learning repository for learning basic VueJS.
     - [GridSome - Vue and CSS Grid out of the box](#gridsome---vue-and-css-grid-out-of-the-box)
     - [pnpm](#pnpm)
 
+## Update 25 October 2019
+
+Plan is to have all Standalone Projects in separate folder.
+
+Also to have one main 'Vue' app which can be deployed online.
+
+Thirdly we can have a PUBLIC folder in which to place all of the static HTML files and to reference them directly.
+
+To do : Build the vue-cli-3 app and have it running online with netlify; then build on this!
+
 ## Resources
 
 ### The Vue Handbook by Flavio Copes
