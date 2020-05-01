@@ -84,3 +84,135 @@ Vue.use(Auth,{
 Now we are ready to move forwards with OAuth!
 
 
+### App.vue - add login and logout buttons using $auth.isAuthenticated()
+
+```html
+<template>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/" tag="button" id='home-button'> Home </router-link>
+      <router-link to="/about">About</router-link>
+      <button v-if='authenticated' v-on:click='logout' id='logout-button'> Logout </button>
+      <button v-else v-on:click='login' id='login-button'> Login </button>
+    </div>
+
+
+
+    <router-view/>
+  </div>
+</template>
+
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
+</style>
+
+
+
+<script>
+
+export default {
+  name: 'app',
+  data: function () {
+    return {
+      authenticated: false
+    }
+  },
+  created () {
+    this.isAuthenticated()
+  },
+  watch: {
+    // Everytime the route changes, check for auth status
+    '$route': 'isAuthenticated'
+  },
+  methods: {
+    async isAuthenticated () {
+      this.authenticated = await this.$auth.isAuthenticated()
+    },
+    login () {
+      this.$auth.loginRedirect('/')
+    },
+    async logout () {
+      await this.$auth.logout()
+      await this.isAuthenticated()
+
+      // Navigate back to home
+      this.$router.push({ path: '/' })
+    }
+  }
+}
+</script>
+```
+
+
+### router/index.js for the response
+
+```html
+import Vue from 'vue'
+import VueRouter, { RouteConfig } from 'vue-router'
+import Home from '../views/Home.vue'
+import Auth from '@okta/okta-vue'
+
+Vue.use(VueRouter)
+
+console.log('process.env.VUE_APP_OKTA_CLIENT_ID')
+console.log(process.env.VUE_APP_OKTA_CLIENT_ID)
+
+Vue.use(Auth,{
+  issuer:'https://dev-961456.okta.com/oauth2/default',
+  clientId: process.env.VUE_APP_OKTA_CLIENT_ID,
+  redirectUri: 'http://localhost:8080/implicit/callback',
+  scopes:['openid','profile','email'],
+  pkce:true
+});
+
+
+
+  const routes: Array<RouteConfig> = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  { path: '/implicit/callback', component: Auth.handleCallback() }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+export default router
+
+```
+
+
+### it's working!!! commit this!!!
