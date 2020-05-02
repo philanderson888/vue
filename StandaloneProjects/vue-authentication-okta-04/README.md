@@ -1,4 +1,15 @@
-# vue-authentication-okta-03
+# vue-authentication-okta-04
+
+Note that this version successfully logs the API token to the console.
+
+This is a big step forwards!
+
+Also I can get the Messages screen to show in the console logging whether or not I am logged in.
+
+  Logged in - get API token
+  Not logged in - no token to log out
+
+I am going to save this version and move on to version 05 which hopefully can actually pass the token etc.  Not sure but stamping this version here!
 
 
 ### link

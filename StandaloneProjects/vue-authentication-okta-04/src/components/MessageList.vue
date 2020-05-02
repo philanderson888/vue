@@ -12,17 +12,33 @@
   </div>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
 import axios from 'axios'
-@Component
-export default class MessageList extends Vue {
-  @Prop() private msg!: string;
+// export default class MessageList extends Vue {
+export default {
+  props:{
+   msg: {
+     type: String,
+     default:''
+   }
+  },
   data(){    
     return{
       posts:[ ]
     }
-  }
+  },
   async created(){
+    const accessToken = await this.$auth.getAccessToken()
+    console.log('accessToken')
+    console.log(accessToken)
+    axios.defaults.headers.common['Authorization']=`Bearer ${accessToken}`
+    console.log('axios')
+    console.log(axios)
+    console.log('axios.defaults')
+    console.log(axios.defaults)
+    console.log('axios.defaults.headers')
+    console.log(axios.defaults.headers)
+    console.log("axios.defaults.headers.common['Authorization']")
+    console.log(axios.defaults.headers.common['Authorization'])
     try{
       const response = await axios.get(`http://localhost:3000/api/messages`)
       console.log(response.data)
