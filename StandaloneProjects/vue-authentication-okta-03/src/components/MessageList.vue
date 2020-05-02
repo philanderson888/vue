@@ -5,6 +5,8 @@
       <li class="posts" v-for="post in posts" :key='post.title'>
         <p><strong>{{post.title}}</strong></p>
         <p>{{post.body}}</p>
+        <p>{{post.date}}</p>
+        <p>{{post.text}}</p>
       </li>
   </ul>
   </div>

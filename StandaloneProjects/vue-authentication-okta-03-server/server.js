@@ -104,6 +104,18 @@ app.get('/api/messages', (req, res) => {
         body: 'post body 2',
         date:  new Date(new Date().getTime() - 1000 * 60 * 60),
         text: 'Hello, world!'
+      },
+      {
+        title: 'Title 3',
+        body: 'post body 3',
+        date:  new Date(),
+        text: 'I am a robot.'
+      },
+      {
+        title: 'Title 4',
+        body: 'post body 4',
+        date:  new Date(new Date().getTime() - 1000 * 60 * 60),
+        text: 'Hello, world!'
       }
     ]
   });
