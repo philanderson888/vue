@@ -5,11 +5,8 @@ import Auth from '@okta/okta-vue'
 
 Vue.use(VueRouter)
 
-console.log('process.env.VUE_APP_OKTA_CLIENT_ID')
-console.log(process.env.VUE_APP_OKTA_CLIENT_ID)
-
 Vue.use(Auth,{
-  issuer:'https://dev-961456.okta.com/oauth2/default',
+  issuer: process.env.VUE_APP_OKTA_ISSUER,
   clientId: process.env.VUE_APP_OKTA_CLIENT_ID,
   redirectUri: 'http://localhost:8080/implicit/callback',
   scopes:['openid','profile','email'],

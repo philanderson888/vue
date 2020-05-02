@@ -10,17 +10,23 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
+ /* This file was obtained at
+    https://github.com/okta/samples-nodejs-express-4/edit/master/resource-server/server.js
+    by following this tutorial
+    https://developer.okta.com/quickstart/#/vue/nodejs/express
+    */
+
 const express = require('express');
 const OktaJwtVerifier = require('@okta/jwt-verifier');
 var cors = require('cors');
-
-const sampleConfig = require('../config.js');
+var port = 3000;
 
 const oktaJwtVerifier = new OktaJwtVerifier({
-  clientId: sampleConfig.resourceServer.oidc.clientId,
-  issuer: sampleConfig.resourceServer.oidc.issuer,
-  assertClaims: sampleConfig.resourceServer.assertClaims,
-  testing: sampleConfig.resourceServer.oidc.testing
+  clientId: process.env.VUE_APP_OKTA_CLIENT_ID,
+  issuer: process.env.VUE_APP_OKTA_ISSUER,
+  assertClaims: {
+    aud:'api//default'
+  }
 });
 
 /**
@@ -38,7 +44,9 @@ function authenticationRequired(req, res, next) {
   }
 
   const accessToken = match[1];
-  const audience = sampleConfig.resourceServer.assertClaims.aud;
+  console.log('accessToken = ' + accessToken)
+  const audience = oktaJwtVerifier.assertClaims.aud;
+  console.log('audience is ' + audience);
   return oktaJwtVerifier.verifyAccessToken(accessToken, audience)
     .then((jwt) => {
       req.jwt = jwt;
@@ -90,6 +98,6 @@ app.get('/api/messages', authenticationRequired, (req, res) => {
   });
 });
 
-app.listen(sampleConfig.resourceServer.port, () => {
-  console.log(`Resource Server Ready on port ${sampleConfig.resourceServer.port}`);
+app.listen(port, () => {
+  console.log(`Resource Server Ready on port ${port}`);
 });
