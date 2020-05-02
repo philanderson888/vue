@@ -83,7 +83,8 @@ app.get('/secure', authenticationRequired, (req, res) => {
  * Another example route that requires a valid access token for authentication, and
  * print some messages for the user if they are authenticated
  */
-app.get('/api/messages', authenticationRequired, (req, res) => {
+
+app.get('/api/messages', (req, res) => {
   res.json({
     messages: [
       {
@@ -97,6 +98,22 @@ app.get('/api/messages', authenticationRequired, (req, res) => {
     ]
   });
 });
+
+
+// app.get('/api/messages', authenticationRequired, (req, res) => {
+//   res.json({
+//     messages: [
+//       {
+//         date:  new Date(),
+//         text: 'I am a robot.'
+//       },
+//       {
+//         date:  new Date(new Date().getTime() - 1000 * 60 * 60),
+//         text: 'Hello, world!'
+//       }
+//     ]
+//   });
+// });
 
 app.listen(port, () => {
   console.log(`Resource Server Ready on port ${port}`);
