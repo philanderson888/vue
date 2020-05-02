@@ -70,6 +70,12 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/api', (req, res) => {
+  res.json({
+    message: 'This is the API root.  Try adding \messages to your url'
+  });
+});
+
 /**
  * An example route that requires a valid access token for authentication, it
  * will echo the contents of the access token if the middleware successfully
@@ -88,10 +94,14 @@ app.get('/api/messages', (req, res) => {
   res.json({
     messages: [
       {
+        title: 'Title',
+        body: 'post body',
         date:  new Date(),
         text: 'I am a robot.'
       },
       {
+        title: 'Title 2',
+        body: 'post body 2',
         date:  new Date(new Date().getTime() - 1000 * 60 * 60),
         text: 'Hello, world!'
       }

@@ -15,18 +15,22 @@ import axios from 'axios'
 @Component
 export default class MessageList extends Vue {
   @Prop() private msg!: string;
-  data(){
+  data(){    
     return{
-      posts:[
-        {
-          title:"title",
-          body:"post body"
-        },
-        {
-                    title:"title",
-          body:"post body"
-        }
-      ]
+      posts:[ ]
+    }
+  }
+  async created(){
+    try{
+      const response = await axios.get(`http://localhost:3000/api/messages`)
+      console.log(response.data)
+      console.log(response.data.messages)
+      console.log('this.posts')     
+      console.log(this.posts)
+      this.posts = response.data.messages; 
+    }
+    catch(e){
+      console.error(`Errors! ${e}`)
     }
   }
 }
