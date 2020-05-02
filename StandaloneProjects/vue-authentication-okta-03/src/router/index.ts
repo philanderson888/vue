@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
+import Messages from '../views/Messages.vue'
 import Auth from '@okta/okta-vue'
 
 Vue.use(VueRouter)
@@ -28,6 +29,11 @@ Vue.use(Auth,{
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path:'/messages',
+    name:'Messages',
+    component: () => import(/* webpackChunkName: "messages" */ '../views/Messages.vue')
   },
   { path: '/implicit/callback', component: Auth.handleCallback() }
 ]

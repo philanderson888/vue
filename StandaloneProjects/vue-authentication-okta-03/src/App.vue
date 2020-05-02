@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link to="/" tag="button" id='home-button'> Home </router-link>
       <router-link to="/about" tag="button" id="about-button"> About </router-link>
+      <router-link to="/messages" tag="button" id="messages-button"> Messages </router-link>
       <button v-if='authenticated' v-on:click='logout' id='logout-button'> Logout </button>
       <button v-else v-on:click='login' id='login-button'> Login </button>
     </div>

@@ -3,21 +3,19 @@
 <img class="splash-screen" alt="Vue logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" />
     <img alt="Okta Logo" class="splash-screen" src="https://www.okta.com/sites/all/themes/Okta/images/logos/developer/Dev_Logo-01_Large.png" />
     <img alt="oauth logo" class="splash-screen" src="https://st.fbk.eu/sites/st.fbk.eu/files/styles/adaptive/public/oauth2-logo_0.jpg?itok=XqBscURN" />
-    <HelloWorld msg="VueJS Authentication with Okta and OAuth2.0"/>
+    <message-list msg="View messages from API"/>
 
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-
+import MessageList from '@/components/MessageList.vue'
 
 export default {
-  name: 'Home',
+  name: 'Messages',
   components: {
-    HelloWorld
+    MessageList
   }
 }
 </script>
