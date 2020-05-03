@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
-import '../assets/css/style.css'
 
 Vue.use(VueRouter)
 
@@ -14,10 +13,12 @@ Vue.use(VueRouter)
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/messages',
+    name: 'Messages',
+    component: () => import(/* webpackChunkName: "messages" */ '../views/Messages.vue')
   }
 ]
 
