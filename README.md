@@ -1,12 +1,24 @@
 # A place for learning VueJS
 
-Here is a learning repository for learning basic VueJS.
+Here is a learning repository for learning VueJS.
 
-There are two folders
+## Contents
 
-1) Single HTML files which import VueJS as a library, and show individual features
+- [A place for learning VueJS](#a-place-for-learning-vuejs)
+  - [Contents](#contents)
+  - [Standalone VueJS files](#standalone-vuejs-files)
+  - [VueJS Projects](#vuejs-projects)
+  - [General VueJS Teaching Notes](#general-vuejs-teaching-notes)
 
-2) Vue CLI 3 standalone projects which can deploy, but are just posted here as static files.  Built with @vue/cli 
+## [Standalone VueJS files](SingleHtmlFiles)
+
+These standalone VueJS files are good for learning individual components of Vue because the file stands alone and there are no complex dependencies to inject into the project.  Good for learning.
+
+## [VueJS Projects](StandaloneProjects)
+
+These are built using the @vue/cli command line interface, and each one is a fully-fledged Vue project
+
+## [General VueJS Teaching Notes](https://github.com/philanderson888/course-notes)
 
 For access to my teaching notes accompanying this code please refer to this general link at
 
