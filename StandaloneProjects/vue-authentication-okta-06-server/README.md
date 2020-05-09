@@ -1,1 +1,2 @@
-See [../vue-authentication-okta-06](../vue-authentication-okta-06-server) for the README for this code
+See [StandaloneProjects\vue-authentication-okta-06\README.md](StandaloneProjects\vue-authentication-okta-06\README.md) for the README for this code
+
