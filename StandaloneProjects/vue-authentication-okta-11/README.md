@@ -53,6 +53,7 @@ Phil Anderson
     - [Sever.js final code for authentication](#severjs-final-code-for-authentication)
   - [Summary](#summary)
   - [Next](#next)
+  - [Addendum](#addendum)
 
 
 
@@ -1025,4 +1026,14 @@ But I am happy for now
 Phil Anderson 
 
 8 May 2020
+
+## Addendum
+
+Not sure where this is taking me but I have now discovered in Okta the user registration page where I can enable users to register within the Okta interface.  Let's see if and how this works.  The url is [https://dev-961456-admin.okta.com/admin/self-service-registration](https://dev-961456-admin.okta.com/admin/self-service-registration) 
+
+OK it's worked - let's see if this works in the application!
+
+Yes I have finally got user sign-up all working.  Secure user sign up is all working.  Which means I can deploy my app securely and check out the data!
+
+I can now know which user is signed in and give them the right data accordingly also.
 

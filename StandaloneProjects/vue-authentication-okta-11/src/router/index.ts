@@ -5,9 +5,6 @@ import Auth from '@okta/okta-vue'
 
 Vue.use(VueRouter)
 
-console.log('process.env.VUE_APP_OKTA_CLIENT_ID')
-console.log(process.env.VUE_APP_OKTA_CLIENT_ID)
-
 Vue.use(Auth,{
   issuer: process.env.VUE_APP_OKTA_ISSUER,
   clientId: process.env.VUE_APP_OKTA_CLIENT_ID,
@@ -19,14 +16,8 @@ Vue.use(Auth,{
 
 
   const routes: Array<RouteConfig> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
+  {     path: '/',     name: 'Home',     component: Home   },
+  {     path: '/about',     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
