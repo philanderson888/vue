@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <title>Vue Post To API using Javascript Fetch</title>
+</head>
+<body>
+<div id="app">
+    <div class="card text-center m-3">
+        <h5 class="card-header">Simple POST Request</h5>
+        <div class="card-body">Returned Id: {{postId}}</div>
+    </div>
+</div>
+<script>
+var app = new Vue({
+    el:'#app',
+    name: "post-request",
+    data() {
+        return {
+        postId: null
+        };
+    },
+    created() {
+        // Simple POST request with a JSON body using fetch
+        const requestOptions = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title: "Vue POST Request Example" })
+        };
+        fetch("https://jsonplaceholder.typicode.com/posts", requestOptions)
+        .then(response => response.json())
+        .then(data => (this.postId = data.id));
+    }
+})    
+</script>
+</body>
+</html>
