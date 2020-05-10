@@ -1,0 +1,27 @@
+@charset "utf-8";
+/*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
+@import "../../../node_modules/bulma/bulma.sass";
+
+body{
+    background-color: rgb(210, 231, 225);
+}
+.image-logo{
+    width: 7min;
+    height: 5vmin;
+    margin: -1vmin 2vmin 1vmin 2vmin;
+}
+.error{
+    color:red;
+    font-size:18px;
+}
+input{
+    width:400px;
+    padding:30px;
+    margin:20px;
+    font-size:21px;
+}
+buttoni{
+    width:400px;
+    height:75px;
+    font-size:100%;
+}
