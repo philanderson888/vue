@@ -1,10 +1,10 @@
 <template>
     <div>
-        Logged in 
-        <span v-if="loggedIn">Yes</span>
-        <span v-else>No</span>
-        <div>
-            <button @click="signOut">Sign out</button>
+        <div v-if="loggedIn">
+            <button @click="signOut">Log out</button>
+        </div>       
+        <div v-else>
+            <button @click="signIn">Log in</button>
         </div>
     </div>
 </template>
@@ -12,6 +12,11 @@
 <script>
 import * as firebase from 'firebase/app'
 export default {
+    created(){
+        firebase.auth().onAuthStateChanged(user => {
+            this.loggedIn = !!user // returns false if no user, true if a user exists
+        })
+    },
     data(){
         return{
             loggedIn:false
@@ -32,11 +37,12 @@ export default {
                 console.log(err)
             }
             
+        }, 
+        signIn(){
+            return {
+                
+            }
         }
     }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

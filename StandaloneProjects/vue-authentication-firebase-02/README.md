@@ -273,4 +273,91 @@ export default {
 </style>	
 ```
 
-*Pausing at 22:41 in video https://www.youtube.com/watch?v=XtbYBoKb2zY*
+App.vue has been changed slightly to add this component in directly
+
+```html
+<template>
+  <div id="app">
+    <div id="nav">
+      <top-header></top-header>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> | 
+      <router-link to="/login">Login</router-link> | 
+      <router-link to="/register">Register</router-link> | 
+      <router-link to="/secret">Secret</router-link>
+    </div>
+    <router-view/>
+  </div>
+</template>
+
+<script>
+import TopHeader from './components/TopHeader'
+export default { 
+  components: { 'top-header' : TopHeader }
+}
+</script>>
+
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
+
+```
+
+### Is User Logged In Or Not?
+
+```html
+// Top Header
+<template>
+    <div>
+        <div v-if="loggedIn">
+            <button @click="signOut">Log out</button>
+        </div>       
+        <div v-else>
+            <button @click="signIn">Log in</button>
+        </div>
+    </div>
+</template>
+
+<script>
+import * as firebase from 'firebase/app'
+export default {
+    created(){
+        firebase.auth().onAuthStateChanged(user => {
+            this.loggedIn = !!user // returns false if no user, true if a user exists
+        })
+    },
+    data(){
+        return{
+            loggedIn:false
+        }
+
+    },
+    methods:{..}
+}
+</script>
+
+
+```
+
+## Adding `Log in` component
+
+pausing at 27:28 in this video https://www.youtube.com/watch?v=XtbYBoKb2zY
