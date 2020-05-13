@@ -1,0 +1,50 @@
+@charset "utf-8";
+/*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
+@import "../../../node_modules/bulma/bulma.sass";
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  #nav {
+    padding: 30px;
+  
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+  
+      &.router-link-exact-active {
+        color: #42b983;
+      }
+    }
+  }
+  
+body{
+    background-color: rgb(210, 231, 225);
+}
+.image-logo{
+    width: 7min;
+    height: 5vmin;
+    margin: -1vmin 2vmin 1vmin 2vmin;
+}
+.error{
+    color:red;
+    font-size:18px;
+}
+input{
+    width:400px;
+    padding:30px;
+    margin:20px;
+    font-size:21px;
+}
+button{
+    width:400px;
+    height:40px;
+    font-size:100%;
+    background-color: rgb(183, 233, 235);
+    border-radius: 2vmin;
+}
