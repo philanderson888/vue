@@ -6,7 +6,7 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/register">Register</router-link> |
       <router-link to="/login">Login</router-link> |
-      <router-link to="/secret">Secret Page</router-link> |
+      <router-link to="/secret">Secret Page</router-link>
     </div>
     <router-view/>
   </div>
@@ -19,3 +19,6 @@ export default {
   }
 }
 </script>
+
+User status is now showing as `logged in` or `logged out` on every page
+

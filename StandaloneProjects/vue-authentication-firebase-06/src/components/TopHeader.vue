@@ -1,10 +1,10 @@
 <template>
     <div>
         <div v-if="loggedIn">
-            <button @click="signOut">Log out</button>
+            <button @click="logOut">Log out</button>
         </div>       
         <div v-else>
-            <button @click="signIn">Log in</button>
+            <button @click="logIn">Log in</button>
         </div>
     </div>
 </template>
@@ -31,20 +31,23 @@ export default {
         }
     },
     methods:{
-        async signOut(){
+        async logOut(){
             try{
                 await firebase.auth().signOut()
                 console.group("Logging out")
                 console.groupEnd()
+                this.$user = {
+                    email:null,
+                    password:null
+                }
                 this.$router.replace({name:'Login'})
             }
             catch(err){
                 console.log(err)
             }
         }, 
-        signIn(){
-            return {
-            }
+        async logIn(){
+            this.$router.replace({name:'Login'})        
         }
     }
 }
