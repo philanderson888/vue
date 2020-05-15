@@ -27,6 +27,7 @@ console.group(`firebaseConfig is`)
 console.log(firebaseConfig)
 console.groupEnd()
 
+
 new Vue({
   router,
   store,

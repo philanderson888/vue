@@ -23,6 +23,19 @@ export default {
         async pressed(){
             try{
                 const user = await firebase.auth().createUserWithEmailAndPassword(this.email,this.password)
+                  .then(userData => {
+                      console.group(`registration complete`)
+                      console.log(userData)
+                      userData.user.sendEmailVerification()
+                        .then(()=>{
+                            console.log('verification email sent')
+                        })
+                        .catch( (error) => {
+                            console.log('verification email was not sent')
+                            console.log(error)
+                        })
+                        console.groupEnd()
+                })
                 console.log()
                 console.group(`user is`)
                 console.log(user)

@@ -35,6 +35,8 @@ Build date 14 May 2020
     - [TopHeader.vue](#topheadervue)
   - [look at securing the `secret` route](#look-at-securing-the-secret-route)
     - [router.js](#routerjs)
+  - [Send confirmation email to user](#send-confirmation-email-to-user)
+  - [Future development opportunities](#future-development-opportunities)
 
 ## Introduction 
 
@@ -595,3 +597,76 @@ Yes!  we now have
 
 Happy days!
 
+## Send confirmation email to user
+
+Yes I have this all working!
+
+```html
+<template>
+    <div>
+        <h1>Register</h1>
+        <div v-if="error" class="error">{{error.message}}</div>
+        <form @submit.prevent="pressed">
+            <div class="email">
+                <input type="email" v-model="email" placeholder="email" />
+            </div>
+            <div class="password">
+                <input type="password" v-model="password" placeholder="password"/>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</template>
+
+<script>
+import * as firebase from 'firebase/app'
+import 'firebase/auth'
+
+export default {
+    methods:{
+        async pressed(){
+            try{
+                const user = await firebase.auth().createUserWithEmailAndPassword(this.email,this.password)
+                  .then(userData => {
+                      console.group(`registration complete`)
+                      console.log(userData)
+                      userData.user.sendEmailVerification()
+                        .then(()=>{
+                            console.log('verification email sent')
+                        })
+                        .catch( (error) => {
+                            console.log('verification email was not sent')
+                            console.log(error)
+                        })
+                        console.groupEnd()
+                })
+                console.log()
+                console.group(`user is`)
+                console.log(user)
+                console.groupEnd()
+                console.log()
+                this.$router.replace({name: 'Secret'})
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+    },
+    data(){
+        return{
+            email:null,
+            password:null,
+            error:null
+        }
+    }
+}
+</script>
+```
+
+## Future development opportunities
+
+a) Log in with Google and Facebook
+
+https://medium.com/@michaljurkowski/how-to-make-basic-authentication-in-vue-js-using-google-firebase-e3ec7dad274
+
+b) Get JWT token
