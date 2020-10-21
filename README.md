@@ -8,9 +8,149 @@ Here is a learning repository for learning VueJS.
   - [Contents](#contents)
   - [Standalone VueJS files](#standalone-vuejs-files)
   - [VueJS Projects](#vuejs-projects)
-  - [vuejs-learning-topics](#vuejs-learning-topics)
-  - [General VueJS Teaching Notes](#general-vuejs-teaching-notes)
-  - [Events](#events)
+  - [VueJS Lifecycle Hooks](#vuejs-lifecycle-hooks)
+  - [fetch](#fetch)
+- [VueJS](#vuejs)
+  - [Vue Summary](#vue-summary)
+  - [Update 25 October 2019](#update-25-october-2019)
+  - [Resources](#resources)
+    - [The Vue Handbook by Flavio Copes](#the-vue-handbook-by-flavio-copes)
+    - [Community](#community)
+  - [Introduction To VueJS](#introduction-to-vuejs)
+    - [Who to follow](#who-to-follow)
+    - [Resources](#resources-1)
+    - [Vue Plugin For Sublime](#vue-plugin-for-sublime)
+  - [Angular vs React vs Vue](#angular-vs-react-vs-vue)
+    - [Angular](#angular)
+    - [React](#react)
+    - [Vue](#vue)
+  - [Vue Versions](#vue-versions)
+  - [Vue Library](#vue-library)
+  - [Vue In Visual Studio](#vue-in-visual-studio)
+- [Hello World](#hello-world)
+    - [First Vue App : Single File : Hello World](#first-vue-app--single-file--hello-world)
+  - [Vue Hello World](#vue-hello-world)
+- [Hello World With @vue/cli](#hello-world-with-vuecli)
+  - [Creating Single-File Vue App From Scratch](#creating-single-file-vue-app-from-scratch)
+- [Vue Commands](#vue-commands)
+- [Vue Dev Tools](#vue-dev-tools)
+- [Summary Of Basic Commands And Syntax](#summary-of-basic-commands-and-syntax)
+- [Components](#components)
+- [Directive](#directive)
+- [Events](#events)
+- [Data](#data)
+- [Watcher](#watcher)
+- [Computed](#computed)
+- [Methods](#methods)
+- [Props](#props)
+- [Types](#types)
+- [Component](#component)
+- [Filter](#filter)
+- [BeforeCreate](#beforecreate)
+- [$ indicates a global variable](#-indicates-a-global-variable)
+- [Components](#components-1)
+- [Dynamic Attributes](#dynamic-attributes)
+- [Props](#props-1)
+- [Refs](#refs)
+- [Vuetify](#vuetify)
+  - [Basic Vue Syntax](#basic-vue-syntax)
+    - [v-html](#v-html)
+    - [Accessing vue elements](#accessing-vue-elements)
+    - [List items](#list-items)
+    - [v-on:click](#v-onclick)
+    - [v-on:keyup](#v-onkeyup)
+    - [Dynamically adding items to a list](#dynamically-adding-items-to-a-list)
+    - [v-for with index](#v-for-with-index)
+    - [Adding a delete button](#adding-a-delete-button)
+    - [v-model : binding data fields](#v-model--binding-data-fields)
+    - [Adding display filters](#adding-display-filters)
+    - [Checking a value is not null](#checking-a-value-is-not-null)
+    - [filter | undercase](#filter--undercase)
+    - [piping filters](#piping-filters)
+  - [Vue Slightly More Advanced Topics](#vue-slightly-more-advanced-topics)
+    - [Computed Properties](#computed-properties)
+    - [Watching](#watching)
+    - [v-bind:class - Dynamically Updating CSS](#v-bindclass---dynamically-updating-css)
+    - [Enable or disable an item](#enable-or-disable-an-item)
+    - [Setting inline CSS Styles](#setting-inline-css-styles)
+    - [v-if and v-else](#v-if-and-v-else)
+    - [v-if](#v-if)
+    - [v-else](#v-else)
+    - [v-show](#v-show)
+  - [Working With Forms](#working-with-forms)
+    - [v-on:submit](#v-onsubmit)
+    - [Vue With Checkboxes](#vue-with-checkboxes)
+    - [Vue With Radio Buttons](#vue-with-radio-buttons)
+    - [Vue With Drop-Down Boxes (HTML Select)](#vue-with-drop-down-boxes-html-select)
+  - [Vue Components](#vue-components)
+    - [Create a component](#create-a-component)
+    - [Using a component](#using-a-component)
+    - [Reusing components](#reusing-components)
+    - [Component Global And Local Data](#component-global-and-local-data)
+    - [Using Components In Vue : Using the x-template syntax](#using-components-in-vue--using-the-x-template-syntax)
+    - [Talking to the parent from the child component](#talking-to-the-parent-from-the-child-component)
+    - [Adding multiple components with the x-template syntax](#adding-multiple-components-with-the-x-template-syntax)
+  - [Toggling Between Templates](#toggling-between-templates)
+  - [Vue Client - 3](#vue-client---3)
+  - [Vue CLI 3](#vue-cli-3)
+  - [Creating a project](#creating-a-project)
+    - [Running a project](#running-a-project)
+    - [Running a project with pnpm](#running-a-project-with-pnpm)
+    - [Vue Serve with Hot Reloading](#vue-serve-with-hot-reloading)
+    - [Adding plugins](#adding-plugins)
+    - [Building for modern browsers](#building-for-modern-browsers)
+    - [API keys](#api-keys)
+- [Vue Tutorial Walkthroughs](#vue-tutorial-walkthroughs)
+  - [Vue Tutorial 1: Traversy Media : Vue in 60 minutes](#vue-tutorial-1-traversy-media--vue-in-60-minutes)
+  - [Installing VUE](#installing-vue)
+  - [Hello World](#hello-world-1)
+    - [Hello World manually](#hello-world-manually)
+  - [Methods](#methods-1)
+    - [Access other fields with `this`](#access-other-fields-with-this)
+  - [{{ only work when we expect text to be present, not HTML attributes }}](#-only-work-when-we-expect-text-to-be-present-not-html-attributes-)
+  - [v-bind](#v-bind)
+  - [href](#href)
+  - [Directives : passing in attribute values](#directives--passing-in-attribute-values)
+  - [Setting data values](#setting-data-values)
+  - [Components](#components-2)
+  - [Analysing a Vue app](#analysing-a-vue-app)
+  - [Routing](#routing)
+  - [Vue basic code snippets](#vue-basic-code-snippets)
+  - [Vue Client 3](#vue-client-3)
+  - [Vue Serve](#vue-serve)
+  - [Building projects](#building-projects)
+  - [Saved preferences](#saved-preferences)
+  - [vue ui](#vue-ui)
+  - [Applying CSS Classes to VUE](#applying-css-classes-to-vue)
+  - [Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes](#vue-tutorial-2--connecting-vue-to-firebase-database-in-54-minutes)
+  - [Vue Backends](#vue-backends)
+  - [Vue Tutorial 2 : Connecting VUE to Firebase Database in 54 minutes](#vue-tutorial-2--connecting-vue-to-firebase-database-in-54-minutes-1)
+- [Vue with Firebase](#vue-with-firebase)
+    - [Create Login view](#create-login-view)
+    - [Routes with src/router.js](#routes-with-srcrouterjs)
+- [Rework From Scratch Of Vue Firebase App](#rework-from-scratch-of-vue-firebase-app)
+- [Add Views To Provide Navigation](#add-views-to-provide-navigation)
+- [Add Bootstrap](#add-bootstrap)
+- [Vue Components And Props](#vue-components-and-props)
+- [Components With Props](#components-with-props)
+  - [Axios](#axios)
+- [Axios Getting API Data](#axios-getting-api-data)
+- [Vue With Firebase: 2019-09](#vue-with-firebase-2019-09)
+- [Vue With Firebase 2](#vue-with-firebase-2)
+- [](#)
+- [To Do Vue App](#to-do-vue-app)
+- [Vuex Global Storage](#vuex-global-storage)
+- [Vue With PHP : Laravel](#vue-with-php--laravel)
+  - [Vue With PHP : Laravel : Tutorial 1:](#vue-with-php--laravel--tutorial-1)
+    - [Traversy Media : Laravel 5.5 API From Scratch - 45 minutes](#traversy-media--laravel-55-api-from-scratch---45-minutes)
+  - [Laravel Tutorial 2 : Traversy Media : Full Stack Vue.js & Laravel - 42 minutes](#laravel-tutorial-2--traversy-media--full-stack-vuejs--laravel---42-minutes)
+  - [Vue Glossary](#vue-glossary)
+    - [GridSome - Vue and CSS Grid out of the box](#gridsome---vue-and-css-grid-out-of-the-box)
+    - [pnpm](#pnpm)
+- [Vue With Authentication](#vue-with-authentication)
+    - [# vue-authentication-okta-02](#h1-idvue-authentication-okta-02-82vue-authentication-okta-02h1)
+    - [Add Okta code](#add-okta-code)
+  - [Events](#events-1)
     - [Form @submit.prevent](#form-submitprevent)
 
 ## [Standalone VueJS files](SingleHtmlFiles)
@@ -21,7 +161,13 @@ These standalone VueJS files are good for learning individual components of Vue 
 
 These are built using the @vue/cli command line interface, and each one is a fully-fledged Vue project
 
-## [learn-vuejs](vuejs-learning-topics)
+## VueJS Lifecycle Hooks
+
+[lifecycle hooks](notes/README.md)
+
+## fetch
+
+[fetch](notes/fetch.md)
 
 # VueJS
 
@@ -210,20 +356,20 @@ Notice that the app is rendering live and we can prove this by opening up the Ch
 # Hello World With @vue/cli
 
 ```bash
-npm install -g @vue/cli   (or yarn global add @vue/cli
-
+# install
+yarn global add @vue/cli
+# update
+yarn global upgrade --latest @vue/cli
+# create
 vue create test-deploy-to-netlify-01
-
+# navigate
 cd test-deploy-to-netlify-01
-
+# run
 yarn serve
-
-Push this site to GitHub
-
-Log in to Netlify; connect to the GitHub repo and push to the internet!
-
-Netlify build command is `yarn run build` 
-Netlify publish directory is `dist`
+# deploy - push to GitHub
+# deploy - connect Netlify to GitHub repo
+# deploy - Netlify build command is `yarn run build` 
+# deploy - Netlify publish directory is `dist`
 ```
 
 ## Creating Single-File Vue App From Scratch
@@ -431,28 +577,7 @@ console.log(this.$refs)  produces an array with index 0,1,2 etc
 
 ```
 
-# Deploying A Vue app with Netlify
 
-[Deploying a Vue App with Netlify](https://medium.com/vue-mastery/deploying-a-vue-app-to-netlify-8f8f7d36f8fb)
-
-### deploy_app_to_netlify_01
-
-```csharp
-npm install -g @vue/cli   (or yarn global add @vue/cli
-
-vue create test-deploy-to-netlify-01
-
-cd test-deploy-to-netlify-01
-
-yarn serve
-
-Push this site to GitHub
-
-Log in to Netlify; connect to the GitHub repo and push to the internet!
-
-Netlify build command is `yarn run build` 
-Netlify publish directory is `dist`
-```
 
 # Vuetify
 
@@ -2101,6 +2226,13 @@ export default Vue.extend({
 </script>
 ```
 
+## Axios
+
+```js
+yarn add axios
+import axios from 'axios'
+```
+
 # Axios Getting API Data
 
 ```jsx
@@ -2206,9 +2338,10 @@ This one was obtained from the internet
     <!-- built files will be auto injected -->
   </body>
 </html>
+```
 
 // src\main.js
-
+```js
 import Vue from 'vue'
 import ToDo from './ToDo.vue'
 
@@ -2617,6 +2750,7 @@ yarn add @okta/okta-vue which has also added to package.json
 
 Then in router/index.ts I also had to add
 
+```js
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
@@ -2631,6 +2765,7 @@ Vue.use(Auth,{
   scopes:['openid','profile','email'],
   pkce:true
 });
+```
 
 although before this worked I had to add
 
@@ -2642,6 +2777,7 @@ and then the project compiled
 
 Now adding Okta code
 
+```js
 import Auth from '@okta/okta-vue'
 
 Vue.use(VueRouter)
@@ -2653,6 +2789,7 @@ Vue.use(Auth,{
   scopes:['openid','profile','email'],
   pkce:true
 });
+```
 
 And this is compiling fine.
 
@@ -2666,6 +2803,7 @@ also .env is in the .gitignore repository
 
 so the variable must start with VUE_APP_ to be read
 
+```js
 Vue.use(Auth,{
   issuer:'https://dev-961456.okta.com/oauth2/default',
   clientId: process.env.VUE_APP_OKTA_CLIENT_ID,
@@ -2673,9 +2811,10 @@ Vue.use(Auth,{
   scopes:['openid','profile','email'],
   pkce:true
 });
+```
 
 this will correctly print out the id
-```
+
 
 ## Events
 
@@ -2697,8 +2836,3 @@ export default {
     }
 }
 ```
-
-
-Thank you 
-
-Phil Anderson

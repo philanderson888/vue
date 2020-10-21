@@ -1,53 +1,18 @@
-# vuejs-learning-topics
-
-## Introduction
-
-This repo is a list of various vuejs topics built for the student to learn various parts of vue
+# fetch
 
 ## Contents
 
-- [vuejs-learning-topics](#vuejs-learning-topics)
-  - [Introduction](#introduction)
+- [fetch](#fetch)
   - [Contents](#contents)
-  - [Vue lifecycle hooks](#vue-lifecycle-hooks)
-    - [beforeCreate](#beforecreate)
-  - [Vue.prototye - adding to global scope variables](#vueprototye---adding-to-global-scope-variables)
-  - [await fetch](#await-fetch)
+  - [Introduction](#introduction)
     - [API Post Using Javascript Fetch](#api-post-using-javascript-fetch)
     - [API Post Using Javascript Fetch With Async..Await](#api-post-using-javascript-fetch-with-asyncawait)
     - [API Post To Invalid URL with Error Handling](#api-post-to-invalid-url-with-error-handling)
-## Vue lifecycle hooks
 
-### beforeCreate
 
-```js
-# add variable
-Vue.prototype.$appName = 'My App'
-# log
-new Vue({
-    beforeCreate: function(){
-        console.log(this.$appName)
-    }
-})
+## Introduction
 
-```
-
-## Vue.prototye - adding to global scope variables
-
-It is possible to add to `Vue.prototype` in order to make a variable available globally within our vue app.
-
-```js
-# add 
-Vue.prototype.$appName = 'My App'
-# log
-new Vue({
-    beforeCreate: function(){
-        console.log(this.$appName)
-    }
-})
-```
-
-## await fetch
+These are a few notes on Javascript fetch()
 
 ### [API Post Using Javascript Fetch](SingleHtmlFiles\api-post-01-using-fetch.html)
 
