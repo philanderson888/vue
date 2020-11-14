@@ -148,7 +148,7 @@ Here is a learning repository for learning VueJS.
     - [GridSome - Vue and CSS Grid out of the box](#gridsome---vue-and-css-grid-out-of-the-box)
     - [pnpm](#pnpm)
 - [Vue With Authentication](#vue-with-authentication)
-    - [# vue-authentication-okta-02](#h1-idvue-authentication-okta-02-82vue-authentication-okta-02h1)
+    - [# vue-authentication-okta-02](#h1-idvue-authentication-okta-02-34vue-authentication-okta-02h1)
     - [Add Okta code](#add-okta-code)
   - [Events](#events-1)
     - [Form @submit.prevent](#form-submitprevent)
@@ -199,6 +199,8 @@ Thirdly we can have a PUBLIC folder in which to place all of the static HTML fil
 To do : Build the vue-cli-3 app and have it running online with netlify; then build on this!
 
 ## Resources
+
+[Extra notes (decrement these)](notes/extra-vue-notes.md)
 
 ### The Vue Handbook by Flavio Copes
 
