@@ -192,7 +192,7 @@ export default {
             // only have coded it fixed at present but it does work if you use a fresh email address
             let authenticationSignUpObject = {
                 "email":"mail5@philanderson.co.uk",
-                "password":"Pa$$w0rd",
+                "password":"...",
                 "returnSecureToken":true
             }
             this.$http.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + process.env.VUE_APP_API_Key, authenticationSignUpObject , {headers:{'Content-Type': 'application/json'}})
@@ -205,7 +205,7 @@ export default {
         signInUser(){
             let authenticationSignInObject = {
                 "email":"mail5@philanderson.co.uk",
-                "password":"Pa$$w0rd",
+                "password":"...",
                 "returnSecureToken":true
             }
             this.$http.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + process.env.VUE_APP_API_Key, authenticationSignInObject , {headers:{'Content-Type':'application/json'}})

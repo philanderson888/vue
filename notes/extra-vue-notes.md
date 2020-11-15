@@ -2430,7 +2430,7 @@ So for example this request
  
  curl 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyDjHtC9j_0snQkAwvEwGpN0XRDShFUF-DI' \ 
 > -H 'Content-Type: application/json' \ 
-> --data-binary '{"email":"mail@philanderson.co.uk","password":"Pa$$w0rd","returnSecureToken":true}' 
+> --data-binary '{"email":"mail@philanderson.co.uk","password":"...","returnSecureToken":true}' 
  
  
 Gets this response 
