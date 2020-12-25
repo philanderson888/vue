@@ -8,6 +8,7 @@
 - [create a new project using the "webpack" template](#create-a-new-project-using-the-webpack-template)
 - [install dependencies and go!](#install-dependencies-and-go)
 - [in the page URL](#in-the-page-url)
+	- [Extra Random Rough Notes Added December 2020](#extra-random-rough-notes-added-december-2020)
 
 
  
@@ -2677,3 +2678,180 @@ this.$router.push("attendance")
 routing 
  
 https://router.vuejs.org/guide/essentials/named-routes.html 
+
+## Extra Random Rough Notes Added December 2020
+
+```
+Vue
+Vue Prototype
+Vue with Netlify
+
+Vue has 2 versions 1) standard with built-in compiler 2) no compiler so build manually
+Can build raw or with the vue-cli scaffold
+
+Building with vue-cli
+vue-cli : npm install -g vue-cli : install vue client
+vue-cli : vue init webpack myapp : build application
+vue-cli : npm run dev : run application
+App.vue
+index.html
+script src=dist/build.js built by webpack
+webpack config : builds everything
+main.js first file to be run
+
+Vue updates virtual DOM (fast) which updates real DOM (slow)
+Can add to regular HTML page with just a CDN link to get started
+create a new VUE INSTANCE with new Vue({el:''});
+el:'#app' will link to a point in one of our templates saying div id="#app"
+data{} element can be added into new Vue({el:...,data:...})
+this = global
+myMethod:function(event){} can use to pass event object into a method
+event.target = input field where event happens (on an input box)
+event.target.value = value of text in input field
+{{}} string interpolation
+Vue renders its own HTML
+data:{x:1} can be reached in HTML as {{x}}
+can call methods from raw html eg
+
+{{MyMethod()}}
+
+
+v-bind works for HTML attributes eg
+Directive eg v-bind v-once
+v-once:href="link" or
+{{title}}
+
+
+v-html will render HTML
+v-anything else will render text
+Vue instances
+<div id="instance2> reached by new Vue({el:"#instance1"}); etc
+First Vue code
+... <script src="https://unpkg...."></script> <script>new Vue({ el:"#app", data:{}, methods:{}})</script> v-on:input="DoThis" (on input field ie whenever some one types or clicks out of an input box ie onblur event
+{{title}} BBC
+
+ this.property=event.target.value using value of input box v-on:click="DoThis" v-on:mousemove="DoThis" event.ClientX holds x coordinate of event v-bind:click="DoThis(field,$event); DoThis:function(field,event){} doNothing:function(){ event.stopPropogation } v-on:mousemove.stop="" stops propogation of any event v-on:mousemove.prevent="" stops propogation of default event v-on:keyup/down v-on:keyup.enter/tab/esc/space="DoThis" inline code v-model binds item to field data : static items methods : always recalculated and does not cache computed : only called when needed and results are cached. watch:{ field1:function(){ // do this when item changes }} asynchronous : because watch is asynchronous must store value of this ie var vm = this; methods vs computed vs watch 1) Methods always run 2) Computed : synchronous, runs only on demand 3) Watch only runs when property changes : asynchronous and watch for return value @=v-on :href = v-bind:href :class="{styleRed:true}" :class="[styleFirstPriority,{styleSecondPriority:true}]" :style="someStyle" inline css where someStyle is a computed function returning an object which is setting CSS v-if="true" shows an item v-if="true" v-else v-hide="true" v-if : item is removed from DOM v-show/hide : item is in the DOM but invisible
+{{item}} v-for="(item,index) in items">{{index}}{{item}} v-for="object in array">
+{{value}}{{key}} v-for="n in 10">{{n}} v-for="(value,index) in myArray" v-for="(value,key,index) in myObject" (can loop within array) :key="person" can uniquely index array and bind each item inside array to track changes         
+Person {{ index1 }} :             
+{{index2}} - {{key2}}:{{value}}
+        
+:key="person" same as v-bind:key="person" var vm1=new Vue(); now can access vm1.title and vm1.DoThis() var vm1=new Vue(); now can access vm1.$data.title var globalObject = "hi" then inside vue instance data:globalObject; $refs is like labelling an object with an ID $refs :
+can this.$refs.myButton.innerText="clickme" - WARNING NOT UPDATING THE DOM $vm1.$refs.myButton.innerText="clickMe" - WARNING NOT UPDATING VUE BUT JUST THE DOM WHICH WILL GET OVERWRITTEN NEXT VUE OVERWRITE Templates : 1)
+2) var vm1 = new Vue({template: '
+'}) 3) vm1.mount('#MyTemplate'); Components 1) Vue.component('component01',{ template:'
+hi
+' }) 2)
+will render 'hi' el : Normal way of creating templates template : limited to single strings only vue lifecycle : beforeCreate, created, beforeMount vue re-rendering : beforeUpdate, updated
+Webpack is a bundler to bundle all the files together into one 'dist' bundle for ease of distribution and ease of running together as one unit
+Babel is a Javascript 6 to 5 compiler which ensures the latest Javascript 6 will also work on all Javascript 5 devices.
+ECMAScript is the official name for Javascript
+Karma runs tests by running your application inside a web server, and then running tests on the live application
+Mocha tests Javascript
+Chai is used with Mocha for assertion true/false
+
+Vuetify builds a site using Google Material Design
+
+Vue is a Progressive Framework - can start off with one simple script tag and gradually increase the dependency on the framework as time progresses
+
+Webpack
+
+Babel
+
+NPM
+
+Knockout
+
+Angular from Google
+
+Vue - by Evan You at Google
+
+JSX - not popular and has a learning curve
+
+Mustache
+
+VueX - State Management - follows Flux and similar to Redux
+
+vue-router
+
+vue is an indie project - not backed by a huge corporation
+
+Vue Hello World has div with id and {{field}}. Declare new Vue({el:'idName',data:{field:'value'}})
+
+Codepen can be used to declare Vue apps
+
+CodeSandbox can also be used to declare Vue apps
+
+new Vue({el:'#myID',components:{App},template:''}) where component is App.vue
+
+npm install -g @vue/cli
+yarn global add @vue/cli
+
+Then can run vue command
+
+vue create
+vue add (plugin)
+vue invoke (plugin)
+vue inspect (webpack config)
+vue serve (run app)
+vue build
+vue init (generate project from scratch)
+
+yarn serve runs our vue app
+yarn build
+yarn lint
+yarn test:unit
+
+vue cli automatically creates a git repository and commits it straight away
+
+vue create -p mytemplate myapp
+vue create --preset philanderson888/reponame appname
+
+vue dev tools then can right click and inspect vue element
+
+Vue components
+Vue events
+Vue vuex
+
+Vetur is Vue plugin on VSCode
+
+scaffold can create a template file
+
+emmet can create html snippets for you
+
+Prettier is an industry standard for code formatting
+
+Components can be defined in 4 ways 1) new Vue({}) 2) Vue.component('component-name',{}) 3) local encapsulated component 4) Component.vue file
+
+Vue can be used in ANOTHER FRAMEWORK with 1) new Vue({}) and 2) Vue.component('component-name',{})
+
+Vue is instantiated by mounting it inside a div element marked with an id
+
+Vue.component('component-name',{props:['passed-in'],template:'<p>{{componentName}}'}) and placed inside div with <component-name passed-in="data" />
+
+Vue.component is globally registered
+
+Components accept el,props,template,data,methods,computed,watch
+
+Component.vue files can only be used with Webpack so only suited where the full app is a Vue app
+
+data:{ field:'value'} can be referenced with {{field}}
+
+{{ can-have-any-single-javascript-code-here }}
+
+v-once is calculated once
+v-on
+v-html
+
+CSS :style="{'text-decoration':field}" with data:{field:'value'} will set the decoration to whatever 'value' sets at
+
+CSS :style="{textDecoration:field}" same as CSS :style="{'text-decoration':field}"
+
+:style is same as v-bind:style
+
+computed function with p :style="styling" and computed():{return{textDecoration:this.textDecoration}} which is declared in data
+
+Babel compiles new Javascript to old Javascript
+
+```
+
