@@ -148,7 +148,7 @@ Here is a learning repository for learning VueJS.
     - [GridSome - Vue and CSS Grid out of the box](#gridsome---vue-and-css-grid-out-of-the-box)
     - [pnpm](#pnpm)
 - [Vue With Authentication](#vue-with-authentication)
-    - [# vue-authentication-okta-02](#h1-idvue-authentication-okta-02-34vue-authentication-okta-02h1)
+    - [# vue-authentication-okta-02](#-vue-authentication-okta-02)
     - [Add Okta code](#add-okta-code)
   - [Events](#events-1)
     - [Form @submit.prevent](#form-submitprevent)
