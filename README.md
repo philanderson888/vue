@@ -152,6 +152,7 @@ Here is a learning repository for learning VueJS.
     - [Add Okta code](#add-okta-code)
   - [Events](#events-1)
     - [Form @submit.prevent](#form-submitprevent)
+  - [MEVN Stack Development](#mevn-stack-development)
 
 ## [Standalone VueJS files](SingleHtmlFiles)
 
@@ -2838,3 +2839,7 @@ export default {
     }
 }
 ```
+
+## MEVN Stack Development
+
+[MEVN Stack Development](notes/mevn-stack.md)
