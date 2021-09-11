@@ -16,6 +16,7 @@
   - [events with `v-on:click="dothis"`](#events-with-v-onclickdothis)
   - [events with `@mouseover`](#events-with-mouseover)
   - [other events](#other-events)
+  - [css dynamic inline styling](#css-dynamic-inline-styling)
 ## introduction
 
 this follows along with the basic vue mastery course `introduction to vue 3` which is behind a paywall but I have signed up and am following along with these tutorials ...
@@ -541,3 +542,134 @@ other events are handled such as
 see more at https://www.vuemastery.com/pdf/Vue-Essentials-Cheat-Sheet.pdf 
 
 
+## css dynamic inline styling
+
+we can set dynamic inline styling as follows
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Mastery</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <!-- Import Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="nav-bar">
+      <div class="nav-item">
+        <a class="nav-item" :href="url">vue mastery</a>
+      </div>
+    </div>
+    <div class="product-container">
+      <div class="product-image">
+        <img v-bind:src="imageUrl" />
+      </div>
+      <div class="product-info">
+        <h1>{{ product }}</h1>
+        <p v-if="isInStock && inventory >= 10">In Stock</p>
+        <p v-else-if="isInStock && inventory < 10 && inventory > 0">Low on stock</p>
+        <p v-else>Out of Stock</p>
+        <p v-if="isInStock && inventory > 0">{{inventory}} items</p>
+        <ul>
+          <li v-for="detail in details">{{detail}}</li>
+          <li v-for="variant in variants" 
+              :key="variant.variantId" 
+              class="color-box" 
+              :style="{ backgroundColor: variant.color } "
+              @mouseover="alterImageColor(variant.url)" 
+          >
+            {{variant.color}}
+          </li>
+          <li>
+            <span v-for="size in sizes">{{size}}</span>
+          </li>
+        </ul>
+        
+      </div>
+      <div class="product-image">
+        <img v-bind:src="imageUrl" />
+      </div>
+      <div class="product-info">
+        <h1 v-show="showMe">{{ product }}</h1>
+      </div>
+    </div>
+    <button class="button" v-on:click={{cart++}}>Increment Cart</button>
+    <button class="button" v-on:click="addToCart">Add To Cart</button>
+    <div class="cart">
+      <p>Cart ({{cart}} items)</p>
+    </div>
+  </div>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      product: 'Socks',
+      imageUrl: './assets/images/socks_green.jpg',
+      url: 'https://www.vuemastery.com',
+      isInStock:true,
+      inventory: 5,
+      showMe: true,
+      details:['80% cotton', '20% polyester'],
+      variants:[
+        {variantId:2234, color:'green', url:'./assets/images/socks_green.jpg'},
+        {variantId:2235, color:'blue' , url:'./assets/images/socks_blue.jpg'}
+      ],
+      sizes:["XS,","S,","M,","L,","XL"],
+      cart: 0,
+      color: "#109aeb"
+    },
+    methods: {
+      addToCart() {
+        this.cart++
+      },
+      alterImageColor(url){
+        console.log(`new url is ${url}`)
+        this.imageUrl = url
+      }
+    }
+  })
+  </script>
+</body>
+</html>
+```
+
+```css
+.color-box{
+  display: inline-block;
+  padding: 1vh 1vw;
+  margin-top:5px;
+  color:white;
+  text-align: center;
+  background-color:#109aeb;
+}
+```
+
+Note that when using inline css styles we can either use `camelCase` ie `fontSize` or `kebab-case` ie `'font-size'` which must be in quotes
+
+```html
+<p style="{fontSize : fontSize}">...</p>
+<p style="{'font-size': fontSize}">...</p>
+<script>
+data:{
+    fontSize:'13px'
+}
+</script>
+```
+
+We can also bind to multiple `css styles` at once using
+
+```html
+<p style="{styleObject, styleObject2}">...</p>
+<script>
+data:{
+    styleObject: { color:red, fontSize:'13px' },
+    styleObject2:{ fontWeight: bold }
+}
+</script>
+```
+
+so the object is both `red`, `13px` and also `bold`
