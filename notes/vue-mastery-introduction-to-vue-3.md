@@ -17,6 +17,7 @@
   - [events with `@mouseover`](#events-with-mouseover)
   - [other events](#other-events)
   - [css dynamic inline styling](#css-dynamic-inline-styling)
+  - [enabling and disabling features with `:disabled`](#enabling-and-disabling-features-with-disabled)
 ## introduction
 
 this follows along with the basic vue mastery course `introduction to vue 3` which is behind a paywall but I have signed up and am following along with these tutorials ...
@@ -673,3 +674,66 @@ data:{
 ```
 
 so the object is both `red`, `13px` and also `bold`
+
+## enabling and disabling features with `:disabled`
+
+we can enable and disable features, for example buttons, depending on conditions
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div id="app">
+    <button class="button" v-on:click="incrementStock">Increment Stock</button>
+    <button class="button" v-on:click="decrementStock">Decrement Stock</button>
+    <button class="button" v-on:click={{cart++}} :disabled="!inStock">Increment Cart</button>
+    <button class="button" v-on:click={{cart--}} :disabled="!inStock">Decrement Cart</button>
+    <button class="button" v-on:click="addToCart">Add To Cart</button>
+    <div class="cart">
+      <p>Cart ({{cart}} items)</p>
+    </div>
+    <div class="cart">
+      <p>Stock ({{stock}} items)</p>
+    </div>
+  </div>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      stock: 5,
+      inStock: false,
+    },
+    methods: {
+      addToCart() {
+        this.cart++
+      },
+      isInStock(){
+        console.log(`is item in stock? ${this.stock>0}`)
+        if (this.Stock>0){
+          inStock = true;
+        }
+        return this.stock > 0
+      },
+      decrementStock(){
+        console.log('decrementing stock')
+        if(this.stock>0){
+          this.stock--;          
+        }
+        if(this.stock<=0){
+          this.inStock=false
+        }
+      },
+      incrementStock(){
+        console.log('incrementing stock')
+        this.stock++;
+        if(this.stock>0){
+          this.inStock=true
+        }
+      }
+    }
+  })
+  </script>
+</body>
+</html>
+```
+

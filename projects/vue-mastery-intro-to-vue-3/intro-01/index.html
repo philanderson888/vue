@@ -21,10 +21,10 @@
       </div>
       <div class="product-info">
         <h1>{{ product }}</h1>
-        <p v-if="isInStock && inventory >= 10">In Stock</p>
-        <p v-else-if="isInStock && inventory < 10 && inventory > 0">Low on stock</p>
+        <p v-if="isInStock && stock >= 10">In Stock</p>
+        <p v-else-if="isInStock && stock < 10 && stock > 0">Low on stock</p>
         <p v-else>Out of Stock</p>
-        <p v-if="isInStock && inventory > 0">{{inventory}} items</p>
+        <p v-if="isInStock && stock > 0">{{stock}} items</p>
         <ul>
           <li v-for="detail in details">{{detail}}</li>
           <li v-for="variant in variants" 
@@ -48,10 +48,16 @@
         <h1 v-show="showMe">{{ product }}</h1>
       </div>
     </div>
-    <button class="button" v-on:click={{cart++}}>Increment Cart</button>
+    <button class="button" v-on:click="incrementStock">Increment Stock</button>
+    <button class="button" v-on:click="decrementStock">Decrement Stock</button>
+    <button class="button" v-on:click={{cart++}} :disabled="!inStock">Increment Cart</button>
+    <button class="button" v-on:click={{cart--}} :disabled="!inStock">Decrement Cart</button>
     <button class="button" v-on:click="addToCart">Add To Cart</button>
     <div class="cart">
       <p>Cart ({{cart}} items)</p>
+    </div>
+    <div class="cart">
+      <p>Stock ({{stock}} items)</p>
     </div>
   </div>
   <script>
@@ -61,8 +67,8 @@
       product: 'Socks',
       imageUrl: './assets/images/socks_green.jpg',
       url: 'https://www.vuemastery.com',
-      isInStock:true,
-      inventory: 5,
+      stock: 5,
+      inStock: false,
       showMe: true,
       details:['80% cotton', '20% polyester'],
       variants:[
@@ -80,6 +86,29 @@
       alterImageColor(url){
         console.log(`new url is ${url}`)
         this.imageUrl = url
+      },
+      isInStock(){
+        console.log(`is item in stock? ${this.stock>0}`)
+        if (this.Stock>0){
+          inStock = true;
+        }
+        return this.stock > 0
+      },
+      decrementStock(){
+        console.log('decrementing stock')
+        if(this.stock>0){
+          this.stock--;          
+        }
+        if(this.stock<=0){
+          this.inStock=false
+        }
+      },
+      incrementStock(){
+        console.log('incrementing stock')
+        this.stock++;
+        if(this.stock>0){
+          this.inStock=true
+        }
       }
     }
   })

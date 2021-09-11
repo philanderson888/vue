@@ -51,6 +51,10 @@ Here is a learning repository for learning VueJS.
   - [v-bind](#v-bind)
   - [v-show](#v-show)
   - [v-for](#v-for)
+  - [events](#events-1)
+  - [dynamic css](#dynamic-css)
+  - [enabling and disabling features eg buttons](#enabling-and-disabling-features-eg-buttons)
+- [older notes below ....](#older-notes-below-)
 - [Props](#props-1)
 - [Refs](#refs)
 - [Vuetify](#vuetify)
@@ -151,7 +155,7 @@ Here is a learning repository for learning VueJS.
 - [Vue With Authentication](#vue-with-authentication)
     - [# vue-authentication-okta-02](#-vue-authentication-okta-02)
     - [Add Okta code](#add-okta-code)
-  - [Events](#events-1)
+  - [Events](#events-2)
     - [Form @submit.prevent](#form-submitprevent)
   - [MEVN Stack Development](#mevn-stack-development)
   - [VUE Mastery Course - Introduction To Vue 3](#vue-mastery-course---introduction-to-vue-3)
@@ -529,6 +533,34 @@ Notice that the app is rendering live and we can prove this by opening up the Ch
 ## v-for
 
 [displaying lists with `v-for`](notes/vue-mastery-introduction-to-vue-3.md#displaying-lists-with-v-for)
+
+
+## events 
+
+[events with `@mouseover`](notes/vue-mastery-introduction-to-vue-3.md#events-with-mouseover)
+[other events](notes/vue-mastery-introduction-to-vue-3.md#other-events)
+
+## dynamic css
+
+[css dynamic inline styling](notes/vue-mastery-introduction-to-vue-3.md#css-dynamic-inline-styling)
+
+## enabling and disabling features eg buttons
+
+[enabling and disabling features with `:disabled`](notes/vue-mastery-introduction-to-vue-3.md#enabling-and-disabling-features-with-disabled)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# older notes below ....
 
 # Props
 
