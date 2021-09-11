@@ -19,16 +19,12 @@ Here is a learning repository for learning VueJS.
   - [Introduction To VueJS](#introduction-to-vuejs)
     - [Who to follow](#who-to-follow)
     - [Resources](#resources-1)
-    - [Vue Plugin For Sublime](#vue-plugin-for-sublime)
   - [Angular vs React vs Vue](#angular-vs-react-vs-vue)
     - [Angular](#angular)
     - [React](#react)
     - [Vue](#vue)
   - [Vue Versions](#vue-versions)
   - [Vue Library](#vue-library)
-  - [Vue In Visual Studio](#vue-in-visual-studio)
-- [Hello World](#hello-world)
-    - [First Vue App : Single File : Hello World](#first-vue-app--single-file--hello-world)
   - [Vue Hello World](#vue-hello-world)
 - [Hello World With @vue/cli](#hello-world-with-vuecli)
   - [Creating Single-File Vue App From Scratch](#creating-single-file-vue-app-from-scratch)
@@ -50,6 +46,11 @@ Here is a learning repository for learning VueJS.
 - [$ indicates a global variable](#-indicates-a-global-variable)
 - [Components](#components-1)
 - [Dynamic Attributes](#dynamic-attributes)
+  - [rendering data with expression syntax {{ ... }}](#rendering-data-with-expression-syntax---)
+  - [v-if, v-else-if, v-else](#v-if-v-else-if-v-else)
+  - [v-bind](#v-bind)
+  - [v-show](#v-show)
+  - [v-for](#v-for)
 - [Props](#props-1)
 - [Refs](#refs)
 - [Vuetify](#vuetify)
@@ -76,7 +77,7 @@ Here is a learning repository for learning VueJS.
     - [v-if and v-else](#v-if-and-v-else)
     - [v-if](#v-if)
     - [v-else](#v-else)
-    - [v-show](#v-show)
+    - [v-show](#v-show-1)
   - [Working With Forms](#working-with-forms)
     - [v-on:submit](#v-onsubmit)
     - [Vue With Checkboxes](#vue-with-checkboxes)
@@ -103,12 +104,12 @@ Here is a learning repository for learning VueJS.
 - [Vue Tutorial Walkthroughs](#vue-tutorial-walkthroughs)
   - [Vue Tutorial 1: Traversy Media : Vue in 60 minutes](#vue-tutorial-1-traversy-media--vue-in-60-minutes)
   - [Installing VUE](#installing-vue)
-  - [Hello World](#hello-world-1)
+  - [Hello World](#hello-world)
     - [Hello World manually](#hello-world-manually)
   - [Methods](#methods-1)
     - [Access other fields with `this`](#access-other-fields-with-this)
   - [{{ only work when we expect text to be present, not HTML attributes }}](#-only-work-when-we-expect-text-to-be-present-not-html-attributes-)
-  - [v-bind](#v-bind)
+  - [v-bind](#v-bind-1)
   - [href](#href)
   - [Directives : passing in attribute values](#directives--passing-in-attribute-values)
   - [Setting data values](#setting-data-values)
@@ -256,10 +257,6 @@ Follow Evan You who was the creator of Vue.js
 
 [Vue School](https://vueschool.io/)
 
-### Vue Plugin For Sublime
-
-Download [https://github.com/vuejs/vue-syntax-highlight](https://github.com/vuejs/vue-syntax-highlight) to your Sublime Text 3 Packages folder
-
 ## Angular vs React vs Vue
 
 ### Angular
@@ -302,60 +299,17 @@ Plugins can be added at any point during the development lifecycle.
 
 We can access the Vue library either online via a CDN or offline
 
+```js
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
+<script src="assets/js/vue.js"></script>
 ```
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script><script src="assets/js/vue.js"></script>
-```
 
-## Vue In Visual Studio
-
-https://docs.microsoft.com/en-us/visualstudio/javascript/quickstart-vuejs-with-nodejs?view=vs-2017
-
-Requirements
-
-1. Visual Studio with NodeJS binaries installed
-2. NodeJS installed
-
-New Project, Typescript, Basic VueJS Application
-
-# Hello World
-
-### First Vue App : Single File : Hello World
-
-```jsx
-
-#  Vue can be put on any web page with simple CDN link. 
-<html>
-<head>
-</head>
-<body>
-<div id="app">
-hi
-{{message}}
-</div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-<script>
-var app = new Vue({
-el:'#app',
-data:{
-message:'Hello world'
-}
-});
-</script>
-</html>
-
-see hello-world-01 and hello-world-02
-```
 
 ## Vue Hello World
 
-We can create a `hello world` vue file inside a regular .html file
+[vue hello world](notes/vue-mastery-introduction-to-vue-3.md)
 
-```
-<html><head><script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script></head><body><div id="app">{{message}}</div><script>var app = new Vue({el:'#app',data:{message:'hello world',}})console.log(app.message)</script></body></html>
-```
 
-Notice that the app is rendering live and we can prove this by opening up the Chrome Dev Tools and choose the Console and change `app.message` to an alternative value
 
 # Hello World With @vue/cli
 
@@ -553,6 +507,28 @@ export default {
 </script>
 
 ```
+
+## rendering data with expression syntax {{ ... }}
+
+[rendering data with `expression syntax` {{ ... }}](notes/vue-mastery-introduction-to-vue-3.md#rendering-data-with-expression-syntax---)
+
+## v-if, v-else-if, v-else
+
+[conditional rendering with `v-if`, `v-else-if` and `v-else`](notes/vue-mastery-introduction-to-vue-3.md#conditional-rendering-with-v-if-v-else-if-and-v-else)
+
+## v-bind
+
+[binding data with `v-bind`](notes/vue-mastery-introduction-to-vue-3.md#binding-data-with-v-bind)
+
+Notice that the app is rendering live and we can prove this by opening up the Chrome Dev Tools and choose the Console and change `app.message` to an alternative value
+
+## v-show
+
+[hiding elements with `v-show`](notes/vue-mastery-introduction-to-vue-3.md#hiding-elements-with-v-show)
+
+## v-for
+
+[displaying lists with `v-for`](notes/vue-mastery-introduction-to-vue-3.md#displaying-lists-with-v-for)
 
 # Props
 
