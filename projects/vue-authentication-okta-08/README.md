@@ -22,7 +22,7 @@ vue create vue-authentication-okta-08;cd vue-authentication-okta-08;yarn install
 
 ### rebuild
 ```js
-cd C:\github\vue\StandaloneProjects\vue-authentication-okta-08; yarn install; yarn serve
+cd C:\github\vue\projects\vue-authentication-okta-08; yarn install; yarn serve
 ```
 
 ### add in assets\css\bulma.scss

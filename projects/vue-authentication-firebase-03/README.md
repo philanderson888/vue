@@ -1,31 +1,24 @@
-# vue-authentication-firebase-05
+# vue-authentication-firebase-03
 
-*This is a rebuild of [vue-authentication-firebase-03](../vue-authentication-firebase-03) as vue-authentication-firebase-04 had a problem with the props not being detected as rendered properly*
+*This is a rebuild from scratch of [vue-authentication-firebase-01](../vue-authentication-firebase-01) and [vue-authentication-firebase-02](../vue-authentication-firebase-02)*
 
-## Introduction
+### Introduction
 
-The goal is to build a fully working authenticating application with
+The goal of this app is to build an authentication system in Firebase with VueJS.  
 
-- VueJS
-- Firebase
-- Email authentication to log in and out
-- Secrets page only visible when logged in
+### Youtube Video
 
-## Youtube
+This is the video I am working through in this tutorial
 
-Following https://www.youtube.com/watch?v=XtbYBoKb2zY
+https://www.youtube.com/watch?v=XtbYBoKb2zY
 
-## Install
+### Install
 
-```powershell
-cd \github\vue\StandaloneProjects\;vue create vue-authentication-firebase-04; cd vue-authentication-firebase-04;yarn install;yarn serve
-```
+vue create vue-authentication-firebase-03; cd vue-authentication-firebase-03;yarn install;yarn serve
 
-## Run
+### Run
 
-```powershell
-clear;cd C:\github\vue\StandaloneProjects\vue-authentication-firebase-05;yarn serve
-```
+clear;cd C:\github\vue\projects\vue-authentication-firebase-03;yarn serve
 
 ### Libraries
 
@@ -33,16 +26,7 @@ clear;cd C:\github\vue\StandaloneProjects\vue-authentication-firebase-05;yarn se
 yarn add firebase axios bulma; yarn serve
 ```
 
-
-### Home.vue
-
-```html
-<img class="image-logo" src="https://www.fullstackpython.com/img/logos/vuejs-wide.png" />
-<img class="image-logo" src="https://firebase.google.com/images/brand-guidelines/logo-standard.png" />
-<HelloWorld msg="Vue App With Firebase Authentication"/>
-```
-
-### main.ts
+### main.ts libraries
 
 ```js
 import Vue from 'vue'
@@ -81,10 +65,7 @@ new Vue({
 }).$mount('#app')
 ```
 
-
-
-
-### bulma at assets\css\bulma.scss
+### Bulma CSS at assets\css\bulma.scss
 
 ```css
 @charset "utf-8";
@@ -137,7 +118,23 @@ button{
 }
 ```
 
-### Views - create Login.vue, Register.vue, Secret.vue
+### Home.vue
+
+```html
+<img class="image-logo" src="https://www.fullstackpython.com/img/logos/vuejs-wide.png" />
+<img class="image-logo" src="https://firebase.google.com/images/brand-guidelines/logo-standard.png" />
+<HelloWorld msg="Vue App With Firebase Authentication"/>
+```
+
+### App.vue
+
+```html
+<router-link to="/">Home</router-link> |
+<router-link to="/about">About</router-link> |
+<router-link to="/register">Register</router-link> |
+<router-link to="/login">Login</router-link> |
+<router-link to="/secret">Secret Page</router-link> |
+```
 
 ### Router index.ts
 
@@ -148,26 +145,10 @@ import Secret from '../views/Secret.vue'
 ```
 
 ```json
-  {     path: '/',          name: 'Home',       component: Home          },
-  {     path: '/register',  name: 'Register',   component: Register      },
-  {     path: '/login',     name: 'Login',      component: Login         },
-  {     path: '/secret',    name: 'Secret',     component: Secret        },
-  {     path: '/about',     name: 'About',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+{     path: '/register',     name: 'Register',     component: Register    },
+{     path: '/login',     name: 'Login',     component: Login    },
+{     path: '/secret',     name: 'Secret',     component: Secret    },
 ```
-
-
-### App.vue
-
-```html
-<router-link to="/">Home</router-link> |
-<router-link to="/about">About</router-link> |
-<router-link to="/register">Register</router-link> |
-<router-link to="/login">Login</router-link> |
-<router-link to="/secret">Secret Page</router-link>
-```
-
 
 
 ### Register.vue
@@ -223,8 +204,7 @@ export default {
 
 Registration now works
 
-
-### TopHeader 
+### TopHeader Component displaying Logged-In status
 
 ```html
 <template>
@@ -244,15 +224,7 @@ export default {
     created(){
         firebase.auth().onAuthStateChanged(user => {
             this.loggedIn = !!user // returns false if no user, true if a user exists
-            this.$user = user
         })
-    },
-    updated(){
-      console.group(this.loggedIn ? "User is logged in" : "User is not logged in");
-      console.log(`user email is ${this.$user.email}`)
-      console.log(`user object is`)
-      console.log(this.$user)
-      console.groupEnd
     },
     data(){
         return{
@@ -263,10 +235,11 @@ export default {
     methods:{
         async signOut(){
             try{
-                await firebase.auth().signOut()
-                console.group("Logging out")
+                const data = await firebase.auth().signOut()
+                console.group("Logging out data")
+                console.log(data)
                 console.groupEnd()
-                this.$router.replace({name:'Login'})
+                this.$router.replace({name:'login'})
 
             }
             catch(err){
@@ -313,56 +286,7 @@ export default {
 Button now shows `login` or `logout` button depending on the status of the user
 
 
-### Register.vue
+### Login.vue
 
-```html
-<template>
-    <div>
-        <h1>Register</h1>
-        <div v-if="error" class="error">{{error.message}}</div>
-        <form @submit.prevent="pressed">
-            <div class="email">
-                <input type="email" v-model="email" placeholder="email" />
-            </div>
-            <div class="password">
-                <input type="password" v-model="password" placeholder="password"/>
-            </div>
-            <button type="submit">Register</button>
-        </form>
-    </div>
-</template>
-
-<script>
-import Vue from 'vue'
-import * as firebase from 'firebase/app'
-import 'firebase/auth'
-
-export default {
-    methods:{
-        async pressed(){
-            try{
-                const user = firebase.auth().createUserWithEmailAndPassword(this.email,this.password)
-                console.log()
-                console.group(`user is`)
-                console.log(user)
-                console.groupEnd()
-                console.log()
-                Vue.prototype.$user = user;
-                this.$router.replace({name: 'Secret'})
-            }
-            catch(err){
-                console.log(err)
-            }
-        }
-    },
-    data(){
-        return{
-            email:null,
-            password:null,
-            error:null
-        }
-    }
-}
-</script>
-```
+Now let's build the login page
 

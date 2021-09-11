@@ -81,7 +81,7 @@ new Vue({
 run with
 
 ```powershell
-clear;cd C:\github\vue\StandaloneProjects\vue-authentication-firebase-01\; yarn serve
+clear;cd C:\github\vue\projects\vue-authentication-firebase-01\; yarn serve
 ```
 
 ### Bulma CSS at assets\css\bulma.scss

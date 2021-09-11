@@ -119,7 +119,7 @@ yarn add async axios buefy @okta/okta-vue @types/okta__okta-vue
 ### run every time
 
 ```js
-cd c:\github\vue\StandaloneProjects\vue-authentication-okta-11;yarn serve
+cd c:\github\vue\projects\vue-authentication-okta-11;yarn serve
 ```
 
 ## Bulma CSS
@@ -566,8 +566,8 @@ app.listen(port, () => {
 
 
 ```js
-cd C:\github\vue\StandaloneProjects\vue-authentication-okta-11-server;node server.js
-cd C:\github\vue\StandaloneProjects\vue-authentication-okta-11;yarn serve
+cd C:\github\vue\projects\vue-authentication-okta-11-server;node server.js
+cd C:\github\vue\projects\vue-authentication-okta-11;yarn serve
 ```
 
 ### server running at [http://localhost:3000/api/messages](http://localhost:3000/api/messages)

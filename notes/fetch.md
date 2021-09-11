@@ -14,7 +14,7 @@
 
 These are a few notes on Javascript fetch()
 
-### [API Post Using Javascript Fetch](SingleHtmlFiles\api-post-01-using-fetch.html)
+### [API Post Using Javascript Fetch](single-files\api-post-01-using-fetch.html)
 
 This tutorial is from Jason Watmore at JasonWatmore.com (https://jasonwatmore.com/post/2020/04/30/vue-fetch-http-post-request-examples) so many thanks [@jason_watmore](https://twitter.com/jason_watmore?lang=en).  
 
@@ -77,7 +77,7 @@ var app = new Vue({
 
 
 
-### [API Post Using Javascript Fetch With Async..Await](SingleHtmlFiles\api-post-02-using-fetch-async.html)
+### [API Post Using Javascript Fetch With Async..Await](single-files\api-post-02-using-fetch-async.html)
 
 This is also from Jason Watmore so again thanks [@jason_watmore](https://twitter.com/jason_watmore?lang=en)
 
@@ -129,7 +129,7 @@ var app = new Vue({
 </html>
 ```
 
-### [API Post To Invalid URL with Error Handling](SingleHtmlFiles\api-post-03-fetch-async-with-error.html)
+### [API Post To Invalid URL with Error Handling](single-files\api-post-03-fetch-async-with-error.html)
 
 This just shows how to handle the code with errors
 

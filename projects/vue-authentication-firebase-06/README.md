@@ -51,13 +51,13 @@ I am repeating the builds in order to force myself to rebuild from scratch every
 ### install
 
 ```powershell
-cd \github\vue\StandaloneProjects\;vue create vue-authentication-firebase-06; cd vue-authentication-firebase-06;yarn install;yarn serve
+cd \github\vue\projects\;vue create vue-authentication-firebase-06; cd vue-authentication-firebase-06;yarn install;yarn serve
 ```
 
 ## run
 
 ```powershell
-clear;cd C:\github\vue\StandaloneProjects\vue-authentication-firebase-06;yarn serve
+clear;cd C:\github\vue\projects\vue-authentication-firebase-06;yarn serve
 ```
 
 ## replace images

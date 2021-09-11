@@ -153,12 +153,13 @@ Here is a learning repository for learning VueJS.
   - [Events](#events-1)
     - [Form @submit.prevent](#form-submitprevent)
   - [MEVN Stack Development](#mevn-stack-development)
+  - [VUE Mastery Course - Introduction To Vue 3](#vue-mastery-course---introduction-to-vue-3)
 
-## [Standalone VueJS files](SingleHtmlFiles)
+## [Standalone VueJS files](single-files)
 
 These standalone VueJS files are good for learning individual components of Vue because the file stands alone and there are no complex dependencies to inject into the project.  Good for learning.
 
-## [VueJS Projects](StandaloneProjects)
+## [VueJS Projects](projects)
 
 These are built using the @vue/cli command line interface, and each one is a fully-fledged Vue project
 
@@ -402,9 +403,7 @@ Vue prototype
 
 # Vue Dev Tools
 
-```bash
-Download Vue Dev Tools at `https://github.com/vuejs/vue-devtools`
-```
+vue dev tools are available as a Chrome extension and be sure, in the settings, to also allow access to file URLs
 
 # Summary Of Basic Commands And Syntax
 
@@ -2843,3 +2842,7 @@ export default {
 ## MEVN Stack Development
 
 [MEVN Stack Development](notes/mevn-stack.md)
+
+## VUE Mastery Course - Introduction To Vue 3
+
+[Vue Mastery - Introduction To Vue 3](notes/vue-mastery-introduction-to-vue-3.md)
