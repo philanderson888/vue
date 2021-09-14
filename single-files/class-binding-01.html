@@ -210,7 +210,7 @@ ul {
 }
 
 
-  </style>
+  </style>>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
@@ -225,7 +225,7 @@ ul {
         <img v-bind:src="imageUrl" />
       </div>
       <div class="product-info">
-        <h1>{{title}}</h1>
+        <h1>{{ product }}</h1>
         <p v-if="isInStock && stock >= 10">In Stock</p>
         <p v-else-if="isInStock && stock < 10 && stock > 0">Low on stock</p>
         <p v-else :class="{'out-of-stock-text':stock<=0}">Out of Stock</p>
@@ -269,7 +269,6 @@ ul {
   var app = new Vue({
     el: '#app',
     data: {
-      brand: 'Vue Mastery',
       product: 'Socks',
       imageUrl: './assets/images/socks_green.jpg',
       url: 'https://www.vuemastery.com',
@@ -316,11 +315,6 @@ ul {
         if(this.stock>0){
           this.inStock=true
         }
-      }
-    },
-    computed:{
-      title(){
-        return this.brand + ' ' + this.product
       }
     }
   })

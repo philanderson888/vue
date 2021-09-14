@@ -18,6 +18,11 @@
   - [other events](#other-events)
   - [css dynamic inline styling](#css-dynamic-inline-styling)
   - [enabling and disabling features with `:disabled`](#enabling-and-disabling-features-with-disabled)
+  - [conditional classes](#conditional-classes)
+  - [computed properties](#computed-properties)
+  - [components](#components)
+    - [templates](#templates)
+  - [props](#props)
 ## introduction
 
 this follows along with the basic vue mastery course `introduction to vue 3` which is behind a paywall but I have signed up and am following along with these tutorials ...
@@ -735,5 +740,221 @@ we can enable and disable features, for example buttons, depending on conditions
   </script>
 </body>
 </html>
+```
+
+## conditional classes
+
+We can see conditional classes at work here on the buttons below
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Mastery</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="nav-bar">
+      <div class="nav-item">
+        <a class="nav-item" :href="url">vue mastery</a>
+      </div>
+    </div>
+    <div class="product-container">
+      <div class="product-image">
+        <img v-bind:src="imageUrl" />
+      </div>
+      <div class="product-info">
+        <h1>{{ product }}</h1>
+        <p v-if="isInStock && stock >= 10">In Stock</p>
+        <p v-else-if="isInStock && stock < 10 && stock > 0">Low on stock</p>
+        <p v-else>Out of Stock</p>
+        <p v-if="isInStock && stock > 0">{{stock}} items</p>
+        <ul>
+          <li v-for="detail in details">{{detail}}</li>
+          <li v-for="variant in variants" 
+              :key="variant.variantId" 
+              class="color-box" 
+              :style="{ backgroundColor: variant.color } "
+              @mouseover="alterImageColor(variant.url)" 
+          >
+            {{variant.color}}
+          </li>
+          <li>
+            <span v-for="size in sizes">{{size}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="product-image">
+        <img v-bind:src="imageUrl" />
+      </div>
+      <div class="product-info">
+        <h1 v-show="showMe">{{ product }}</h1>
+      </div>
+    </div>
+    <button class="button" v-on:click="incrementStock">Increment Stock</button>
+    <button class="button" :class="{disabledButton:stock<=0}" v-on:click="decrementStock">Decrement Stock</button>
+    <button class="button" :class="{disabledButton:stock<=0}"  v-on:click={{cart++}} :disabled="!inStock">Increment Cart</button>
+    <button class="button" :class="{disabledButton:cart<=0}" v-on:click={{cart--}} :disabled="cart<=0">Decrement Cart</button>
+    <button class="button" :class="{disabledButton:stock<=0}" v-on:click="addToCart">Add To Cart</button>
+    <div class="cart">
+      <p>Cart ({{cart}} items)</p>
+    </div>
+    <div class="cart">
+      <p>Stock ({{stock}} items)</p>
+    </div>
+  </div>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      product: 'Socks',
+      imageUrl: './assets/images/socks_green.jpg',
+      url: 'https://www.vuemastery.com',
+      stock: 5,
+      inStock: true,
+      showMe: true,
+      details:['80% cotton', '20% polyester'],
+      variants:[
+        {variantId:2234, color:'green', url:'./assets/images/socks_green.jpg'},
+        {variantId:2235, color:'blue' , url:'./assets/images/socks_blue.jpg'}
+      ],
+      sizes:["XS,","S,","M,","L,","XL"],
+      cart: 0,
+      color: "#109aeb"
+    },
+    methods: {
+      addToCart() {
+        this.cart++
+      },
+      alterImageColor(url){
+        console.log(`new url is ${url}`)
+        this.imageUrl = url
+      },
+      isInStock(){
+        console.log(`is item in stock? ${this.stock>0}`)
+        if (this.Stock>0){
+          inStock = true;
+        }
+        return this.stock > 0
+      },
+      decrementStock(){
+        console.log('decrementing stock')
+        if(this.stock>0){
+          this.stock--;          
+        }
+        if(this.stock<=0){
+          this.inStock=false
+          console.log(`this.inStock=${this.inStock}`)
+        }
+      },
+      incrementStock(){
+        console.log('incrementing stock')
+        this.stock++;
+        if(this.stock>0){
+          this.inStock=true
+        }
+      }
+    }
+  })
+  </script>
+</body>
+</html>
+```
+
+## computed properties
+
+we can also calculate properties live on the fly and display them.  The advantage of computed properties over methods is that the computed properties are cached and only run if their dependencies change, but methods are run afresh every time.  So for large items which don't change much, computed properties are definitely a more efficient way of displayng data.
+
+for example we could replace
+
+```html
+<h1>{{brand}} {{ product }}</h1>
+```
+with
+
+```html
+<h1>{{title}}</h1>
+
+<script>
+computed:{
+  title(){
+    return this.brand + ' ' + this.product
+  }
+}
+</script>
+```
+
+## components
+
+components are modular blocks within our app which can be added or removed at will.
+
+with data as a function we can have the same reusable template but each template returns different data depending on its place in the code
+
+```js
+options = {
+  template:`
+  <div>
+    ....
+  </div>`
+},
+data(){   return {  }    }
+Vue.component('componentName',options)
+```
+
+### templates
+
+templates can be created in a number of ways.  the first way to be aware of is using backtick `literals`
+
+```js
+template: `<div>this is a template</div>`
+```
+
+
+
+## props
+
+props are used to pass data `into` components from above
+
+```html
+<componentName message="this is a message" />
+```
+
+passes props `message` into the component
+
+```jsx
+options = {
+  props: [message],
+  template: `<div>{{message}}</div>`,
+  data(){   return {}  }
+}
+Vue.component(`componentName`, options)
+```
+
+props can be an array
+
+```js
+props : [prop1,prop2,prop3]
+```
+
+or an object
+
+```js
+let componentOptions = {
+  props: {
+    message: {
+      type: String, 
+      required: true, 
+      default: 'default value of message'
+    }
+  },
+  template: `<div><h1>Product Component</h1><p>{{message}}</p></div>`,
+  data(){
+    return { someData: 'some data'}
+  }
+}
+Vue.component('product',componentOptions)
 ```
 

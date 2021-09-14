@@ -32,6 +32,11 @@ body {
   text-align: center;
 }
 
+.disabledButton {
+  background-color: #d8d8d8;
+  cursor: not-allowed;
+}
+
 .color-circle {
   width: 50px;
   height: 50px;
@@ -49,10 +54,7 @@ body {
   background-color:#109aeb;
 }
 
-.disabledButton {
-  background-color: #d8d8d8;
-  cursor: not-allowed;
-}
+
 
 h1 {
   font-size: 50px;
@@ -103,6 +105,11 @@ li {
 
 .out-of-stock-img {
   opacity:0.5
+}
+
+.out-of-stock-text {
+  text-decoration: line-through;
+  color:#aa3535;
 }
 
 p {
