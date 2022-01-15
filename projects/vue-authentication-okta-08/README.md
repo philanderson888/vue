@@ -16,7 +16,7 @@ vue create vue-authentication-okta-08;cd vue-authentication-okta-08;yarn install
     "@okta/okta-vue": "^2.0.0",
     "@types/okta__okta-vue": "^1.2.0",
     "async": "^3.2.0",
-    "axios": "^0.19.2",
+    "axios": ">=0.21.2",
     "bulma": "^0.8.2"
 ```
 
