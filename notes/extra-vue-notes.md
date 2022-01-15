@@ -4,11 +4,8 @@
 
 ## Contents
 
-- [install vue-cli](#install-vue-cli)
-- [create a new project using the "webpack" template](#create-a-new-project-using-the-webpack-template)
-- [install dependencies and go!](#install-dependencies-and-go)
 - [in the page URL](#in-the-page-url)
-	- [Extra Random Rough Notes Added December 2020](#extra-random-rough-notes-added-december-2020)
+  - [Extra Random Rough Notes Added December 2020](#extra-random-rough-notes-added-december-2020)
 
 
  
@@ -1896,104 +1893,6 @@ and listen as before with the $on(newEvent...)
  
  
  
- 
- 
- 
- 
- 
- 
- 
-Connecting Vue to http using Firebase 
- 
-New project 
- 
-Working from lecture 209 in Section 15 
- 
-Installing a new project at  
- 
-Using this page 
- 
-https://vuejs.org/v2/guide/installation.html 
- 
-# install vue-cli 
-$ npm install --global vue-cli 
-# create a new project using the "webpack" template 
-$ vue init webpack my-project 
-# install dependencies and go! 
-$ cd my-project 
-$ npm run dev 
- 
- 
-npm install --save vue-resource 
- 
-also in main.js 
- 
-import VueResource from 'vue-resource' 
-Vue.use(VueResource) 
- 
- 
- 
- 
- 
-Using a for loop to extract data from a JSON object into an array 
- 
-{} into [] 
- 
-fetchData(){ 
-console.log('Getting Data'); 
-this.$http.get('https://vue-06-38517.firebaseio.com/data.json') 
-.then( response => { 
-console.log(response); 
-console.log(response.body); 
-console.log(this.users); 
-return response.json(); 
-}) 
-.then( data=>{ 
-console.log(data); 
-const resultArray = []; 
-for (let key in data){ 
-resultArray.push(data[key]); 
-this.users=resultArray; 
-} 
-}); 
- 
- 
- 
- 
- 
-Post vs Put 
- 
-Post appends 
-Put overwrites existing record 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Firebase Databases 
- 
-When we create a Firebase database we can detect if it's reachable 
- 
-You must specify your Realtime Database URL when initializing your JavaScript SDK. 
-You can find your Realtime Database URL in the Database tab in the Firebase console. It will be in the form of https://<databaseName>.firebaseio.com. 
-  // Set the configuration for your app 
-  // TODO: Replace with your project's config object 
-  var config = { 
-    apiKey: "apiKey", 
-    authDomain: "projectId.firebaseapp.com", 
-    databaseURL: "https://databaseName.firebaseio.com", 
-    storageBucket: "bucket.appspot.com" 
-  }; 
-  firebase.initializeApp(config); 
- 
-  // Get a reference to the database service 
-  var database = firebase.database(); 
-You're ready to start using the Firebase Realtime Database! 
  
  
  
