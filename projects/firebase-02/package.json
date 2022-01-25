@@ -1,0 +1,16 @@
+{
+  "name": "firebase-02",
+  "version": "1.0.0",
+  "description": "- [vue-firebase-02](#vue-firebase-02)\r   - [contents](#contents)\r   - [introduction](#introduction)\r   - [reference](#reference)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "cd ./functions && yarn serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "typescript": "^4.5.4"
+  }
+}

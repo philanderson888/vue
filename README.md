@@ -9,6 +9,7 @@ Here is a learning repository for learning VueJS.
   - [Standalone VueJS files](#standalone-vuejs-files)
   - [VueJS Projects](#vuejs-projects)
   - [VueJS Lifecycle Hooks](#vuejs-lifecycle-hooks)
+    - [beforeCreate](#beforecreate)
   - [fetch](#fetch)
 - [VueJS](#vuejs)
   - [Vue Summary](#vue-summary)
@@ -42,7 +43,7 @@ Here is a learning repository for learning VueJS.
 - [Types](#types)
 - [Component](#component)
 - [Filter](#filter)
-- [BeforeCreate](#beforecreate)
+- [BeforeCreate](#beforecreate-1)
 - [$ indicates a global variable](#-indicates-a-global-variable)
 - [Components](#components-1)
 - [Dynamic Attributes](#dynamic-attributes)
@@ -144,6 +145,7 @@ Here is a learning repository for learning VueJS.
 - [Vue With Firebase 2](#vue-with-firebase-2)
 - [](#)
 - [To Do Vue App](#to-do-vue-app)
+- [Vue.prototye - adding to global scope variables](#vueprototye---adding-to-global-scope-variables)
 - [Vuex Global Storage](#vuex-global-storage)
 - [Vue With PHP : Laravel](#vue-with-php--laravel)
   - [Vue With PHP : Laravel : Tutorial 1:](#vue-with-php--laravel--tutorial-1)
@@ -170,7 +172,20 @@ These are built using the @vue/cli command line interface, and each one is a ful
 
 ## VueJS Lifecycle Hooks
 
-[lifecycle hooks](notes/README.md)
+### beforeCreate
+
+```js
+# add variable
+Vue.prototype.$appName = 'My App'
+# log
+new Vue({
+    beforeCreate: function(){
+        console.log(this.$appName)
+    }
+})
+
+```
+
 
 ## fetch
 
@@ -2451,6 +2466,22 @@ export default {
     }
 </script>
 
+```
+
+
+# Vue.prototye - adding to global scope variables
+
+It is possible to add to `Vue.prototype` in order to make a variable available globally within our vue app.
+
+```js
+# add 
+Vue.prototype.$appName = 'My App'
+# log
+new Vue({
+    beforeCreate: function(){
+        console.log(this.$appName)
+    }
+})
 ```
 
 # Vuex Global Storage

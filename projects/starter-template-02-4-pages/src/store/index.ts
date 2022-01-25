@@ -1,9 +1,6 @@
 import { createStore } from "vuex";
 
-import _firebase from 'firebase'
-
-console.log(_firebase);
-
+import * as fb from '../firebase'
 
 export default createStore({
   state: {},

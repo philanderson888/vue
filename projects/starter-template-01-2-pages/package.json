@@ -1,5 +1,5 @@
 {
-  "name": "can-i-play-this-game-02",
+  "name": "caniplaythisgame",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,10 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@types/firebase": "^3.2.1",
-    "@types/node": "^17.0.8",
     "core-js": "^3.6.5",
-    "firebase": "^9.6.3",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
